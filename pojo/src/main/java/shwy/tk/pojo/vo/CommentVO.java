@@ -3,7 +3,7 @@ package shwy.tk.pojo.vo;
 import java.util.Date;
 
 /**
- * Created by shwy on 2017/10/16.
+ * Created by shwy on 2017/10/23.
  */
 public class CommentVO {
     private String nickName;

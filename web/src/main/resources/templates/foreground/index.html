@@ -39,7 +39,7 @@
 <div class="header-bottom" th:include="foreground/common::blogTitle"></div><!--博客标题结束-->
 
 <div class="banner"
-     style="background: url(http://op93pqovl.bkt.clouddn.com/images/banner-1.jpg) no-repeat 0px 0px;background-size: 100%">
+     style="background: url(../../foreground/images/banner-1.jpg) no-repeat 0px 0px;background-size: 100%">
     <div class="container">
         <h2 th:text="${application.signature.title}">愿你出走半生，归来仍是少年</h2>
         <p th:text="${application.signature.content}">三毛说：“心之何如有似万丈迷津，遥亘千里，其中并无舟子可以渡人，除了自渡，他人爱莫能助。” </p>
@@ -57,7 +57,7 @@
                            aria-controls="expeditions" aria-expanded="true">音乐欣赏</a>
                     </li>
                     <li role="presentation" class="">
-                        <a href="#safari" role="tab" id="safari-tab" data-toggle="tab" aria-controls="safari">网页游戏</a>
+                        <a href="#safari" role="tab" id="safari-tab" data-toggle="tab" aria-controls="safari">电影赏析</a>
                     </li>
                     <li role="presentation" class="">
                         <a href="#trekking" role="tab" id="trekking-tab" data-toggle="tab"
@@ -123,8 +123,8 @@
         <div class="col-md-9 technology-left">
             <div class="tech-no">
                 <div class="tc-ch ">
-                    <h3><a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html">推荐 : <span
-                            th:text="${application.recommendBlog.title}">置顶</span></a></h3>
+                    <h3><a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html">推荐 :
+                        <span th:text="${application.recommendBlog.title}">置顶</span></a></h3>
                     <h6></h6>
                     <div class="tch-img">
                         <a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html"><img

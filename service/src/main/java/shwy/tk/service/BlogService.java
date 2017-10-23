@@ -7,8 +7,9 @@ import shwy.tk.pojo.vo.BlogVO;
 
 import java.util.HashMap;
 import java.util.List;
+
 /**
- * Created by shwy on 2017/10/12.
+ * Created by shwy on 2017/4/16.
  */
 public interface BlogService {
 

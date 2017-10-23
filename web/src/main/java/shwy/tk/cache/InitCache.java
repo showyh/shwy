@@ -1,20 +1,24 @@
 package shwy.tk.cache;
 
+import shwy.tk.pojo.po.BlogTagPO;
+import shwy.tk.pojo.po.BlogTypePO;
+import shwy.tk.pojo.po.LinkPO;
+import shwy.tk.pojo.vo.BlogDateArchiveVO;
+import shwy.tk.pojo.vo.BlogVO;
+import shwy.tk.pojo.po.MottoPO;
+import shwy.tk.pojo.po.SignaturePO;
+import shwy.tk.service.*;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
-import shwy.tk.pojo.vo.BlogDateArchiveVO;
-import shwy.tk.pojo.vo.BlogVO;
-import shwy.tk.service.BlogService;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import java.util.HashMap;
 import java.util.List;
-/**
- * Created by shwy on 2017/10/16.
- */
+
 /**
  * 项目启动时就加载此类，将不常变的数据存进application，相当于缓存
  */
@@ -35,18 +39,29 @@ public class InitCache implements ServletContextListener, ApplicationContextAwar
         ServletContext application = servletContextEvent.getServletContext();
 
         //获取service实例
-
+        LinkService linkService = (LinkService) applicationContext.getBean("linkService");
+        BlogTypeService blogTypeService = (BlogTypeService) applicationContext.getBean("blogTypeService");
+        BlogTagService blogTagService = (BlogTagService) applicationContext.getBean("blogTagService");
         BlogService blogService = (BlogService) applicationContext.getBean("blogService");
+        MottoService mottoService = (MottoService) applicationContext.getBean("mottoService");
+        SignatureService signatureService = (SignatureService) applicationContext.getBean("signatureService");
 
         //调用service方法，取得数据
-
+        List<LinkPO> linkList = linkService.listLink(new HashMap<>());
+        List<BlogTypePO> blogTypeList = blogTypeService.listBlogType();
+        List<BlogTagPO> blogTagList = blogTagService.listBlogTag(new HashMap<>());
         List<BlogDateArchiveVO> blogDateArchiveList = blogService.listBlogDateArchive();
-
+        MottoPO motto = mottoService.getMotto();
+        SignaturePO signature = signatureService.getSignature();
         BlogVO recommendBlog = blogService.getRecommendBlog();
 
         //将数据塞进application
-
+        application.setAttribute("linkList", linkList);//友情链接;
+        application.setAttribute("blogTypeList", blogTypeList);//博客类别;
+        application.setAttribute("blogTagList", blogTagList);//博客列表;
         application.setAttribute("blogDateArchiveList", blogDateArchiveList);//博客日期归档;
+        application.setAttribute("motto", motto);//博客座右铭;
+        application.setAttribute("signature", signature);//博客签名;
         application.setAttribute("recommendBlog", recommendBlog);//推荐博客;
 
     }

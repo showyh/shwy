@@ -1,7 +1,7 @@
 package shwy.tk.pojo.po;
 
 /**
- * Created by shwy on 2017/10/12.
+ * Created by shwy on 2017/10/23.
  */
 public class BlogTypePO {
 

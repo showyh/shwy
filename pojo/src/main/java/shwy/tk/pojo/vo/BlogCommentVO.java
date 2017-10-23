@@ -1,7 +1,7 @@
 package shwy.tk.pojo.vo;
 
 /**
- * Created by shwy on 2017/10/15.
+ * Created by shwy on 2017/10/23.
  */
 public class BlogCommentVO {
     private Integer id;
