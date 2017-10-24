@@ -1,23 +1,24 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html >
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8">
     <title>音乐</title>
+
 </head>
 
 <body>
 <!-- THREE.JS 84 -->
-<script th:href="@{/foreground/js/three.min.js}" src="../../static/foreground/js/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+
 <!-- Simplified object for 2D and THREE.js canvas (designed for my web page banners and for doing tests with them) -->
 <!-- Can work in 2 ways, normal / test mode, and banner mode (for my web page headers) -->
-<script th:href="@{/foreground/js/ObjetoCanvas.js}" src="../../static/foreground/js/ObjetoCanvas.js"></script>
-<link th:href="@{/foreground/css/ObjetoCanvas.css}" href="../../static/foreground/css/ObjetoCanvas.css" rel="stylesheet"
-      type="text/css"/>
+<script src="../../foreground/js/ObjetoCanvas.js"></script>
+<link rel="stylesheet" href="../../foreground/css/ObjetoCanvas.css"></link>
+
 <!-- Create time animations like Tween.js with less feautres but with my own style -->
-<script th:href="@{/foreground/js/ObjetoAnimacion.js}" src="../../static/foreground/js/ObjetoAnimacion.js"></script>
-<script th:href="@{/foreground/js/music.js}" src="../../static/foreground/js/music.js"></script>
+<script src="../../foreground/js/ObjetoAnimacion.js"></script>
+
+<script src="../../foreground/js/music.js"></script>
 
 </body>
 </html>

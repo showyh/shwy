@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 
 /**
- * Created by shwy on 2017/10/16.
+ * Created by shwy on 2017/10/20.
  */
 @Configuration
 public class ErrorPageConfig {

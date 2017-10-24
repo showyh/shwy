@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by shwy on 2017/10/12.
+ * Created by shwy on 2017/10/20.
  */
 @Component
 public class QiNiuUploadUtil {

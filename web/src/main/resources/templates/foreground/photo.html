@@ -161,136 +161,150 @@
 <div class="wrapper">
     <div class="cols">
         <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container"><a href="images.html">
-                <div class="front" style="background-image: url(../../static/foreground/images/photo/1.jpg)">
+            <div class="container">
+                <div class="front" th:each="photo:${photoList}">
+                    <a th:href="'/photo/'+${photo.id}" href="images.html">
+                        <img th:src="${photo.coverImage}" src="../../static/foreground/images/photo/1.jpg" alt="">
+                    </a>
                     <div class="inner">
-                        <p>相册一</p>
-                        <span>创建者</span>
+                        <p th:text="${photo.photoName}">相册一</p>
+                        <span th:text="${photo.author}">创建者</span>
                     </div>
                 </div>
                 <div class="back">
                     <div class="inner">
-                        <p>相册描述相册描述相册描述相册描述相册描述相册描述</p>
+                        <p th:text="${photo.description}">相册描述</p>
                     </div>
                 </div>
-            </a>
             </div>
         </div>
         <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container"><a href="images.html">
-                <div class="front" style="background-image:url(../../static/foreground/images/photo/2.jpg)">
+            <div class="container">
+                <div class="front" th:each="photo:${photoList}">
+                    <a th:href="'/photo/'+${photo.id}" href="images.html">
+                        <img th:src="${photo.coverImage}" src="../../static/foreground/images/photo/2.jpg" alt="">
+                    </a>
                     <div class="inner">
-                        <p>相册二</p>
-                        <span>创建者</span>
+                        <p th:text="${photo.photoName}">相册二</p>
+                        <span th:text="${photo.author}">创建者</span>
                     </div>
                 </div>
                 <div class="back">
                     <div class="inner">
-                        <p>相册描述相册描述相册描述相册描述相册描述相册描述</p>
+                        <p th:text="${photo.description}">相册描述</p>
                     </div>
                 </div>
-            </a>
             </div>
         </div>
         <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container"><a href="images.html">
-                <div class="front" style="background-image: url(../../static/foreground/images/photo/3.jpg)">
+            <div class="container">
+                <div class="front" th:each="photo:${photoList}">
+                    <a th:href="'/photo/'+${photo.id}" href="images.html">
+                        <img th:src="${photo.coverImage}" src="../../static/foreground/images/photo/3.jpg" alt="">
+                    </a>
                     <div class="inner">
-                        <p>相册三</p>
-                        <span>创建者</span>
+                        <p th:text="${photo.photoName}">相册三</p>
+                        <span th:text="${photo.author}">创建者</span>
                     </div>
                 </div>
                 <div class="back">
                     <div class="inner">
-                        <p>相册描述相册描述相册描述相册描述相册描述相册描述</p>
+                        <p th:text="${photo.description}">相册描述</p>
                     </div>
                 </div>
-            </a>
-            </div>
-
-        </div>
-        <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container"><a href="images.html">
-                <div class="front" style="background-image: url(../../static/foreground/images/photo/4.jpg)">
-                    <div class="inner">
-                        <p>相册四</p>
-                        <span>创建者</span>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="inner">
-                        <p>相册描述相册描述相册描述相册描述相册描述相册描述</p>
-                    </div>
-                </div>
-            </a>
             </div>
         </div>
         <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container"><a href="images.html">
-                <div class="front" style="background-image: url(../../static/foreground/images/photo/5.jpg)">
+            <div class="container">
+                <div class="front" th:each="photo:${photoList}">
+                    <a th:href="'/photo/'+${photo.id}" href="images.html">
+                        <img th:src="${photo.coverImage}" src="../../static/foreground/images/photo/4.jpg" alt="">
+                    </a>
                     <div class="inner">
-                        <p>相册五</p>
-                        <span>创建者</span>
+                        <p th:text="${photo.photoName}">相册四</p>
+                        <span th:text="${photo.author}">创建者</span>
                     </div>
                 </div>
                 <div class="back">
                     <div class="inner">
-                        <p>相册描述相册描述相册描述相册描述相册描述相册描述</p>
+                        <p th:text="${photo.description}">相册描述</p>
                     </div>
                 </div>
-            </a>
             </div>
         </div>
         <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container"><a href="images.html">
-                <div class="front" style="background-image: url(../../static/foreground/images/photo/6.jpg)">
+            <div class="container">
+                <div class="front" th:each="photo:${photoList}">
+                    <a th:href="'/photo/'+${photo.id}" href="images.html">
+                        <img th:src="${photo.coverImage}" src="../../static/foreground/images/photo/5.jpg" alt="">
+                    </a>
                     <div class="inner">
-                        <p>相册六</p>
-                        <span>创建者</span>
+                        <p th:text="${photo.photoName}">相册五</p>
+                        <span th:text="${photo.author}">创建者</span>
                     </div>
                 </div>
                 <div class="back">
                     <div class="inner">
-                        <p>相册描述相册描述相册描述相册描述相册描述相册描述</p>
+                        <p th:text="${photo.description}">相册描述</p>
                     </div>
                 </div>
-            </a>
-            </div>
-
-        </div>
-        <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container"><a href="images.html">
-                <div class="front" style="background-image: url(../../static/foreground/images/photo/7.jpg)">
-                    <div class="inner">
-                        <p>相册七</p>
-                        <span>创建者</span>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="inner">
-                        <p>相册描述相册描述相册描述相册描述相册描述相册描述</p>
-                    </div>
-                </div>
-            </a>
             </div>
         </div>
         <div class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container"><a href="images.html">
-                <div class="front" style="background-image: url(../../static/foreground/images/photo/8.jpg)">
+            <div class="container">
+                <div class="front" th:each="photo:${photoList}">
+                    <a th:href="'/photo/'+${photo.id}" href="images.html">
+                        <img th:src="${photo.coverImage}" src="../../static/foreground/images/photo/6.jpg" alt="">
+                    </a>
                     <div class="inner">
-                        <p>相册八</p>
-                        <span>创建者</span>
+                        <p th:text="${photo.photoName}">相册六</p>
+                        <span th:text="${photo.author}">创建者</span>
                     </div>
                 </div>
                 <div class="back">
                     <div class="inner">
-                        <p>相册描述相册描述相册描述相册描述相册描述相册描述</p>
+                        <p th:text="${photo.description}">相册描述</p>
                     </div>
                 </div>
-            </a>
             </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" th:each="photo:${photoList}">
+                    <a th:href="'/photo/'+${photo.id}" href="images.html">
+                        <img th:src="${photo.coverImage}" src="../../static/foreground/images/photo/7.jpg" alt="">
+                    </a>
+                    <div class="inner">
+                        <p th:text="${photo.photoName}">相册七</p>
+                        <span th:text="${photo.author}">创建者</span>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p th:text="${photo.description}">相册描述</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" th:each="photo:${photoList}">
+                    <a th:href="'/photo/'+${photo.id}" href="images.html">
+                        <img th:src="${photo.coverImage}" src="../../static/foreground/images/photo/8.jpg" alt="">
+                    </a>
+                    <div class="inner">
+                        <p th:text="${photo.photoName}">相册八</p>
+                        <span th:text="${photo.author}">创建者</span>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p th:text="${photo.description}">相册描述</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
-</div>
 </body>
 </html>

@@ -1,81 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Page Not Found</title>
-    <style>
-        ::-moz-selection {
-            background: #b3d4fc;
-            text-shadow: none;
-        }
-
-        ::selection {
-            background: #b3d4fc;
-            text-shadow: none;
-        }
-
-        html {
-            padding: 30px 10px;
-            font-size: 20px;
-            line-height: 1.4;
-            color: #737373;
-            background: #f0f0f0;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-        }
-
-        body {
-            max-width: 550px;
-            _width: 550px;
-            padding: 30px 20px 50px;
-            border: 1px solid #b3b3b3;
-            border-radius: 4px;
-            margin: 0 auto;
-            box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-            background: #fcfcfc;
-        }
-
-        h1 {
-            margin: 0 10px;
-            font-size: 50px;
-            text-align: center;
-        }
-
-        h1 span {
-            color: #bbb;
-        }
-
-        h3 {
-            margin: 1.5em 0 0.5em;
-        }
-
-        p {
-            margin: 1em 0;
-        }
-
-        ul {
-            padding: 0 0 0 40px;
-            margin: 1em 0;
-        }
-
-        .container {
-            max-width: 500px;
-            _width: 500px;
-            margin: 0 auto;
-        }
-
-    </style>
-</head>
-<body>
-<div class="container">
-    <h1>Not found <span>:(</span></h1>
-    <p>Sorry, but the page you were trying to view does not exist.</p>
-    <p>It looks like this was the result of either:</p>
-    <ul>
-        <li>a mistyped address</li>
-        <li>an out-of-date link</li>
-    </ul>
-</div>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Yigit Yigit Ce.[pulyavserdce.com]" />
+  <meta name="description" content="Site description" />
+  <meta name="keywords" content="keywords, keyword, seo, google" /> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+  <meta name="apple-mobile-web-app-capable" content="yes" /> 
+  <title>Coffee Break : 404</title>
+   <link th:href="@{/foreground/css/errorpagestyle.css}" href="../../foreground/css/errorpagestyle.css" rel="stylesheet" type="text/css"/>
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+   <link rel="icon" type="image/x-icon" href="favicon.png" />
+   <link rel="apple-touch-icon" href="favicon.png" />
+   <link rel="apple-touch-startup-image" href="favicon.png" />
+   </head> 
+   <body> 
+   <div class="controller">
+    <div class="objects"> 
+    <!-- text area -->
+    <div class="text-area rotate">
+    <p class="error">Error 404</p>
+    <p class="details">Not found<br /><br />Sorry,The page you are looking for is not here or moved.</p> 
+    </div> 
+    <!-- text area -->
+    <!-- home page --> 
+    <div class="homepage rotate">
+    <a href="/">Back to homepage</a>
+    </div> <!-- home page --> 
+    </div> <!-- social-icons --> 
+    <!-- social-icons --> 
+    </div> 
+ 
 </body>
 </html>

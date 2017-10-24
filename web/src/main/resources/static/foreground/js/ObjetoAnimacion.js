@@ -1,5 +1,5 @@
 /* Objeto para crear animaciones de tiempo creado por Josep Antoni Bover Creado el 25/08/2016
- *  Ultima modificación el 02/02/2017
+ *  Ultima modificación el 20/10/2017
  * */
 
 

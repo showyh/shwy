@@ -1,6 +1,6 @@
 /* Fusión del ObjetoCanvas (originalmente destinado a tests de banners) con el ObjetoBanner 
     Creado el 14/10/2016 por Josep Antoni Bover Comas para devildrey33.es 
-    Ultima modificación :  14/02/2017 
+    Ultima modificación :  20/10/2017
  */
 
 /*  Opciones['Tipo']            puede ser : 

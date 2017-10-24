@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by shwy on 2017/4/16.
+ * Created by shwy on 2017/10/20.
  */
 public interface BlogService {
 

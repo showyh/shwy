@@ -1,7 +1,7 @@
 package shwy.tk.service;
 
 /**
- * Created by shwy on 2017/4/15.
+ * Created by shwy on 2017/10/23.
  */
 public interface LikeService {
 
