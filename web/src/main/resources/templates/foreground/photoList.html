@@ -4,6 +4,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link th:href="@{/foreground/images/blog.ico}" href="../../static/foreground/images/blog.ico" rel="icon"
+          type="image/x-icon">
     <script th:src="@{/foreground/js/jquery.min.photo.js}"
             src="../../static/foreground/js/jquery.min.photo.js"></script>
     <link th:href="@{/foreground/css/photostyle.css}" href="../../static/foreground/css/photostyle.css" rel="stylesheet"
@@ -160,9 +162,9 @@
 </script>
 <div class="wrapper">
     <div class="cols">
-        <div class="col" ontouchstart="this.classList.toggle('hover');">
+        <div class="col" >
             <div class="container">
-                <div class="front" th:each="photo:${photoList}">
+                <!--<div class="front" th:each="photo:${photoList}">
                     <a th:href="'/photo/'+${photo.id}" href="images.html">
                         <img th:src="${photo.coverImage}" src="../../static/foreground/images/photo/1.jpg" alt="">
                     </a>
@@ -305,6 +307,14 @@
             </div>
         </div>
         </div>
+     <nav class="paging wow fadeInDown" data-wow-duration=".5s" data-wow-delay=".2s"
+         style="text-align: center">
+        <ul class="pagination pagination-mg" th:utext="${pageNation}">
+        </ul>
+    </nav> &lt;!&ndash;分页结束&ndash;&gt;-->
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

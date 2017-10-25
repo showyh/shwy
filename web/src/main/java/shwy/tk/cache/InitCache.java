@@ -1,17 +1,13 @@
 package shwy.tk.cache;
 
-import shwy.tk.pojo.po.BlogTagPO;
-import shwy.tk.pojo.po.BlogTypePO;
-import shwy.tk.pojo.po.LinkPO;
-import shwy.tk.pojo.vo.BlogDateArchiveVO;
-import shwy.tk.pojo.vo.BlogVO;
-import shwy.tk.pojo.po.MottoPO;
-import shwy.tk.pojo.po.SignaturePO;
-import shwy.tk.service.*;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
+import shwy.tk.pojo.po.*;
+import shwy.tk.pojo.vo.BlogDateArchiveVO;
+import shwy.tk.pojo.vo.BlogVO;
+import shwy.tk.service.*;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -63,6 +59,7 @@ public class InitCache implements ServletContextListener, ApplicationContextAwar
         application.setAttribute("motto", motto);//博客座右铭;
         application.setAttribute("signature", signature);//博客签名;
         application.setAttribute("recommendBlog", recommendBlog);//推荐博客;
+
 
     }
 
