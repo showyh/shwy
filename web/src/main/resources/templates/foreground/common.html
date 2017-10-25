@@ -38,7 +38,7 @@
                         <ul class="nav navbar-nav">
                             <li ><a href="/">首页</a></li>
                             <li><a href="/blog/list">博客列表</a></li>
-                            <li><a href="/photo/list">相册</a></li>
+                            <li><a href="/photo/list">相册列表</a></li>
                             <li><a href="/music">音乐</a></li>
                             <li><a href="/diary">时光轴</a></li>
                             <li><a href="/blogAdvice">留言板</a></li>
@@ -131,9 +131,9 @@
 
             <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                 <h4>友情链接</h4>
-                <div class="sim-button button5" th:each="link:${application.linkList}"><a th:href="${link.linkUrl}"
-                                                                                          target="_blank"><span
-                        th:text="${link.linkName}">知乎</span></a></div>
+                <div class="sim-button button5" th:each="link:${application.linkList}">
+                    <a th:href="${link.linkUrl}" target="_blank">
+                    <span th:text="${link.linkName}">知乎</span></a></div>
             </div><!--友情链接结束-->
         </div>
     </div>

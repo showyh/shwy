@@ -16,13 +16,18 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by shwy on 2017/10/24.
+ * Created by shwy on 2017/10/17.
  */
 @Controller
-public class PhotoController {
+public class PhotoListController {
+
     @Autowired
     private PhotoService photoService;
 
+
+
+
+    //获取博客列表
     @RequestMapping(value = "/photo/list", method = RequestMethod.GET)
     public String photoList() {
         return "redirect:/photo/list/1";
@@ -49,4 +54,5 @@ public class PhotoController {
         mav.addObject("pageNation", pageNation);
         return mav;
     }
+
 }

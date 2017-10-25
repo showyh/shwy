@@ -8,6 +8,15 @@ public class PhotoPO {
     private  String photoName;
     private String description;
     private String coverImage;
+    private String author;
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
     public Integer getId() {
         return id;

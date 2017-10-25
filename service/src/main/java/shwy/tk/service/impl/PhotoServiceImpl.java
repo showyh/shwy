@@ -10,17 +10,16 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by shwy on 2017/10/24.
+ * Created by shwy on 2017/10/25.
  */
 @Service("photoService")
-public class PhotoServiceImpl implements PhotoService {
+public class PhotoServiceImpl implements PhotoService{
     @Autowired
     private PhotoDAO photoDAO;
-
     @Override
     public List<PhotoPO> listPhoto(HashMap<String, Object> param) {
-        List<PhotoPO> PhotoList = photoDAO.listPhoto(param);
-        return PhotoList;
+        List<PhotoPO> photoPOList = photoDAO.listPhoto(param);
+        return photoPOList;
     }
 
     @Override
