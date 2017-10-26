@@ -19,7 +19,7 @@ import java.util.List;
  * Created by shwy on 2017/10/17.
  */
 @Controller
-public class PhotoListController {
+public class PhotoController {
 
     @Autowired
     private PhotoService photoService;
@@ -27,7 +27,7 @@ public class PhotoListController {
 
 
 
-    //获取博客列表
+    //获取相册列表
     @RequestMapping(value = "/photo/list", method = RequestMethod.GET)
     public String photoList() {
         return "redirect:/photo/list/1";
@@ -35,7 +35,7 @@ public class PhotoListController {
 
     @RequestMapping(value = "/photo/list/{page}", method = RequestMethod.GET)
     public ModelAndView photoList(@PathVariable String page) {
-        ModelAndView mav = new ModelAndView("foreground/photoList");
+        ModelAndView mav = new ModelAndView("foreground/photo");
         HashMap<String, Object> param = new HashMap<>();
         //拼装分页参数
         PageBeanBO pageBean = new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
