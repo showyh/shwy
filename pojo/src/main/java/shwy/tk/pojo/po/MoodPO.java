@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 
+/**
+ * Created by shwy on 2017/10/22.
+ */
 public class MoodPO {
     private Integer id;
     private String title;
