@@ -1,32 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>shwy'blog</title>
+    <title>博客页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
-    <link th:href="@{/foreground/images/blog.ico}" href="/foreground/images/blog.ico" rel="icon"
-          type="image/x-icon">
-    <link th:href="@{/foreground/css/bootstrap.min.css}" href="/foreground/css/bootstrap.min.css"
-          rel="stylesheet" type="text/css"/>
-    <link th:href="@{/foreground/css/style.css}" href="/foreground/css/style.css" rel="stylesheet"
-          type="text/css"/>
-    <link th:href="@{/foreground/css/mystyle.css}" href="/foreground/css/mystyle.css" rel="stylesheet"
-          type="text/css"/>
-    <link th:href="@{/foreground/css/dropdown.css}" href="/foreground/css/dropdown.css" rel="stylesheet"
-          type="text/css"/>
-    <link th:href="@{/foreground/css/animate.min.css}" href="/foreground/css/animate.min.css"
-          rel="stylesheet">
-    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}"
-          href="../../static/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
-    <link th:href="@{/foreground/css/jquery.emoji.css}" href="/foreground/css/jquery.emoji.css"
-          rel="stylesheet">
+    <link th:href="@{/foreground/images/blog.ico}" href="/foreground/images/blog.ico" rel="icon" type="image/x-icon">
+    <link th:href="@{/foreground/css/bootstrap.min.css}" href="/foreground/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/style.css}" href="/foreground/css/style.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/mystyle.css}" href="/foreground/css/mystyle.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/dropdown.css}" href="/foreground/css/dropdown.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/animate.min.css}" href="/foreground/css/animate.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}" href="/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.emoji.css}" href="/foreground/css/jquery.emoji.css" rel="stylesheet">
     <link th:href="@{/foreground/css/player.css}" href="/foreground/css/player.css" rel="stylesheet">
     <!--代码高亮-->
-    <link th:href="@{/foreground/css/shCore.min.css}" href="/foreground/css/shCore.min.css"
-          rel="stylesheet">
-    <link th:href="@{/foreground/css/shThemeEclipse.min.css}" href="/foreground/css/shThemeEclipse.min.css"
-          rel="stylesheet">
+    <link th:href="@{/foreground/css/shCore.min.css}" href="/foreground/css/shCore.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/shThemeEclipse.min.css}" href="/foreground/css/shThemeEclipse.min.css" rel="stylesheet">
     <style>
         img {
             max-width: 100% !important;
@@ -85,7 +75,7 @@
                             <div class="media-left response-text-left">
                                 <a href="#">
                                     <img th:src="@{/foreground/images/sin2.jpg}"
-                                         src="../../static/foreground/images/sin1.jpg" class="img-responsive" alt=""
+                                         src="/foreground/images/sin1.jpg" class="img-responsive" alt=""
                                          style="width: 50px">
                                 </a>
                             </div>
@@ -106,12 +96,12 @@
                                              th:class="'replyPanel'+${comment.id}" class="replyPanel">
                                             <a>
                                                 <img th:src="@{/foreground/images/sin1.jpg}" th:if="${reply.role}==true"
-                                                     src="../../static/foreground/images/sin2.jpg"
+                                                     src="/foreground/images/sin2.jpg"
                                                      class="img-responsive"
                                                      alt="" style="width: 50px">
                                                 <img th:src="@{/foreground/images/sin2.jpg}"
                                                      th:if="${reply.role}==false"
-                                                     src="../../static/foreground/images/sin2.jpg"
+                                                     src="/foreground/images/sin2.jpg"
                                                      class="img-responsive"
                                                      alt="" style="width: 50px">
                                             </a>
@@ -163,41 +153,25 @@
      th:include="foreground/common::copyright"></div><!--版权区结束-->
 <div class="QPlayer" th:include="foreground/common::QPlayer"></div><!--音乐结束-->
 
-<script th:src="@{/foreground/js/jquery.min.js}" type="text/javascript"
-        src="../../static/foreground/js/jquery.min.js"></script>
-<script th:src="@{/foreground/js/bootstrap.min.js}" type="text/javascript"
-        src="../../static/foreground/js/bootstrap.min.js"></script>
-<script th:src="@{/foreground/js/wow.min.js}" type="text/javascript"
-        src="../../static/foreground/js/wow.min.js"></script>
-<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}" type="text/javascript"
-        src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
-<script th:src="@{/foreground/js/modernizr.min.js}" type="text/javascript"
-        src="../../static/foreground/js/modernizr.min.js"></script>
-<script th:src="@{/foreground/js/jquery.dropdown.js}" type="text/javascript"
-        src="../../static/foreground/js/jquery.dropdown.js"></script>
-<script th:src="@{/foreground/js/time.js}" type="text/javascript" src="../../static/foreground/js/time.js"></script>
-<script th:src="@{/foreground/js/myjs.js}" type="text/javascript" src="../../static/foreground/js/myjs.js"></script>
-<script th:src="@{/foreground/js/jquery.mousewheel.min.js}" src="../../static/foreground/js/jquery.mousewheel.min.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}"
-        src="../../static/foreground/js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
-<script th:src="@{/foreground/js/jquery.emoji.js}" src="../../static/foreground/js/jquery.emoji.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/layer.min.js}" src="../../static/foreground/js/layer.min.js"
-        type="text/javascript"></script>
+<script th:src="@{/foreground/js/jquery.min.js}" type="text/javascript" src="/foreground/js/jquery.min.js"></script>
+<script th:src="@{/foreground/js/bootstrap.min.js}" type="text/javascript" src="/foreground/js/bootstrap.min.js"></script>
+<script th:src="@{/foreground/js/wow.min.js}" type="text/javascript" src="/foreground/js/wow.min.js"></script>
+<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}" type="text/javascript" src="/foreground/js/jquery.svg3dtagcloud.min.js"></script>
+<script th:src="@{/foreground/js/modernizr.min.js}" type="text/javascript" src="/foreground/js/modernizr.min.js"></script>
+<script th:src="@{/foreground/js/jquery.dropdown.js}" type="text/javascript" src="/foreground/js/jquery.dropdown.js"></script>
+<script th:src="@{/foreground/js/time.js}" type="text/javascript" src="/foreground/js/time.js"></script>
+<script th:src="@{/foreground/js/myjs.js}" type="text/javascript" src="/foreground/js/myjs.js"></script>
+<script th:src="@{/foreground/js/jquery.mousewheel.min.js}" src="/foreground/js/jquery.mousewheel.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}" src="/foreground/js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/jquery.emoji.js}" src="/foreground/js/jquery.emoji.js" type="text/javascript"></script>
+<script th:src="@{/foreground/plugin/layer/layer.js}" src="/foreground/plugin/layer/layer.js" type="text/javascript"></script>
 <!--代码高亮-->
-<script th:src="@{/foreground/js/shCore.min.js}" src="../../static/foreground/js/shCore.min.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/shBrushJava.min.js}" src="../../static/foreground/js/shBrushJava.min.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/shBrushXml.min.js}" src="../../static/foreground/js/shBrushXml.min.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/shBrushSql.min.js}" src="../../static/foreground/js/shBrushSql.min.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/shBrushPython.min.js}" src="../../static/foreground/js/shBrushPython.min.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/shBrushJScript.min.js}" src="../../static/foreground/js/shBrushJScript.min.js"
-        type="text/javascript"></script>
+<script th:src="@{/foreground/js/shCore.min.js}" src="/foreground/js/shCore.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/shBrushJava.min.js}" src="/foreground/js/shBrushJava.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/shBrushXml.min.js}" src="/foreground/js/shBrushXml.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/shBrushSql.min.js}" src="/foreground/js/shBrushSql.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/shBrushPython.min.js}" src="/foreground/js/shBrushPython.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/shBrushJScript.min.js}" src="/foreground/js/shBrushJScript.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     SyntaxHighlighter.all();
 </script>

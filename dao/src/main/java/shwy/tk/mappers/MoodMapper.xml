@@ -9,16 +9,17 @@
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="title" property="title" jdbcType="VARCHAR"/>
         <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="pictureUrl" property="pictureUrl" jdbcType="VARCHAR"/>
         <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP"/>
         <result column="is_show" property="is_show" jdbcType="BIT"/>
     </resultMap>
 
     <sql id="listVO">
-        title,content,publishTime
+        title,content,publishTime,pictureUrl
     </sql>
 
     <sql id="listPO">
-        id,title,content,publishTime,is_show
+        id,title,content,publishTime,pictureUrl,is_show
     </sql>
 
     <select id="listMoodVO" resultMap="moodResultMap" parameterType="Map">

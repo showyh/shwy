@@ -5,21 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
-    <link th:href="@{/foreground/images/blog.ico}" href="../../static/foreground/images/blog.ico" rel="icon"
-          type="image/x-icon">
-    <link th:href="@{/foreground/css/bootstrap.min.css}" href="../../static/foreground/css/bootstrap.min.css"
-          rel="stylesheet" type="text/css"/>
-    <link th:href="@{/foreground/css/style.css}" href="../../static/foreground/css/style.css" rel="stylesheet"
-          type="text/css"/>
-    <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel='stylesheet'
-          type='text/css'/>
-    <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css"
-          rel="stylesheet">
-    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}"
-          href="../../static/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
-    <link th:href="@{/foreground/css/jquery.emoji.css}" href="../../static/foreground/css/jquery.emoji.css"
-          rel="stylesheet">
-    <link th:href="@{/foreground/css/player.css}" href="../../static/foreground/css/player.css" rel="stylesheet">
+    <link th:href="@{/foreground/images/blog.ico}" href="/foreground/images/blog.ico" rel="icon" type="image/x-icon">
+    <link th:href="@{/foreground/css/bootstrap.min.css}" href="/foreground/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/style.css}" href="/foreground/css/style.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/mystyle.css}" href="/foreground/css/mystyle.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/animate.min.css}" href="/foreground/css/animate.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}" href="/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.emoji.css}" href="/foreground/css/jquery.emoji.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/player.css}" href="/foreground/css/player.css" rel="stylesheet">
     <!--百度站点统计-->
     <script>
         var _hmt = _hmt || [];
@@ -67,7 +60,7 @@
                                         <div class="media-left response-text-left">
                                             <a href="#">
                                                 <img th:src="@{/foreground/images/sin2.jpg}"
-                                                     src="../../static/foreground/images/sin1.jpg"
+                                                     src="/foreground/images/sin1.jpg"
                                                      class="img-responsive" alt="" style="width: 50px">
                                             </a>
                                         </div>
@@ -90,12 +83,12 @@
                                                         <a>
                                                             <img th:src="@{/foreground/images/sin1.jpg}"
                                                                  th:if="${blogAdvice.role}==true"
-                                                                 src="../../static/foreground/images/sin2.jpg"
+                                                                 src="/foreground/images/sin2.jpg"
                                                                  class="img-responsive"
                                                                  alt="" style="width: 50px">
                                                             <img th:src="@{/foreground/images/sin2.jpg}"
                                                                  th:if="${blogAdvice.role}==false"
-                                                                 src="../../static/foreground/images/sin2.jpg"
+                                                                 src="/foreground/images/sin2.jpg"
                                                                  class="img-responsive"
                                                                  alt="" style="width: 50px">
                                                         </a>
@@ -162,14 +155,10 @@
 <script th:src="@{/foreground/js/bootstrap.min.js}" src="/foreground/js/bootstrap.min.js"></script>
 <script th:src="@{/foreground/js/wow.min.js}" src="/foreground/js/wow.min.js"></script>
 <script th:src="@{/foreground/js/myjs.js}" src="/foreground/js/myjs.js"></script>
-<script th:src="@{/foreground/js/jquery.mousewheel.min.js}" src="/foreground/js/jquery.mousewheel.min.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}"
-        src="../../static/foreground/js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
-<script th:src="@{/foreground/js/jquery.emoji.js}" src="../../static/foreground/js/jquery.emoji.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/layer.min.js}" src="../../static/foreground/js/layer.min.js"
-        type="text/javascript"></script>
+<script th:src="@{/foreground/js/jquery.mousewheel.min.js}" src="/foreground/js/jquery.mousewheel.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}" src="/foreground/js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/jquery.emoji.js}" src="/foreground/js/jquery.emoji.js" type="text/javascript"></script>
+<script th:src="@{/foreground/plugin/layer/layer.js}" src="/foreground/plugin/layer/layer.js" type="text/javascript"></script>
 
 <script>
     window.onload = function () {

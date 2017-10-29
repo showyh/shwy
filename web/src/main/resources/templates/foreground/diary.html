@@ -49,122 +49,89 @@
                                     </li>
                                 </ul><!--面板标签标题结束-->
                                 <div id="myTabContent" class="tab-content">
-                                    <div role="tabpanel" class="tab-pane fade active in" id="expeditions"
-                                         aria-labelledby="expeditions-tab" style="padding-bottom: 0">
+                                   <!-- 左侧-->
+                                    <div role="tabpanel" class="tab-pane fade active in" id="expeditions" aria-labelledby="expeditions-tab" style="padding-bottom: 0">
                                         <div class="VivaTimeline">
                                             <dl>
                                                 <span th:each="timeLine:${timeLineList}">
                                                     <dt th:text="${timeLine.moodArchiveDate}">May 2016</dt>
-
                                                     <span th:each="mood,iterStat:${timeLine.moodVOList}">
-                                                        <dd class="pos-left clearfix wow fadeInLeftBig animated"
-                                                            th:if="${iterStat.odd}==true">
-                                                    <div class="circ"></div>
-                                                    <div class="time"
-                                                         th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
-                                                    <div class="events">
-                                                        <div class="events-header"
-                                                             th:text="${mood.title}">Event Heading</div>
-                                                        <div class="events-body">
-                                                            <div class="row">
-                                                                <div class="events-desc" th:text="${mood.content}">
+                                                        <dd class="pos-left clearfix wow fadeInLeftBig animated" th:if="${iterStat.odd}==true">
+                                                          <div class="circ"></div>
+                                                           <div class="time" th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
+                                                            <div class="events">
+                                                             <div class="events-header" th:text="${mood.title}">Event Heading</div>
+                                                                  <div class="events-body">
+                                                                    <div class="row">
+                                                                       <div class="events-desc" th:text="${mood.content}"></div>
+                                                                    </div>
+                                                                  </div>
+                                                             </div>
+                                                        </dd>
+                                                        <dd class="pos-right clearfix wow fadeInRightBig animated" th:if="${iterStat.even}==true">
+                                                           <div class="circ"></div>
+                                                             <div class="time" th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
+                                                               <div class="events">
+                                                                  <div class="events-header" th:text="${mood.title}">Event Heading</div>
+                                                                    <div class="events-body">
+                                                                       <div class="row">
+                                                                         <div class="events-desc" th:text="${mood.content}"></div>
+                                                                       </div>
+                                                                    </div>
 
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- <div class="events-footer">
-                                                             123
-                                                         </div>-->
-                                                    </div>
-                                                </dd>
-
-                                                        <dd class="pos-right clearfix wow fadeInRightBig animated"
-                                                            th:if="${iterStat.even}==true">
-                                                    <div class="circ"></div>
-                                                    <div class="time"
-                                                         th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
-                                                    <div class="events">
-                                                        <div class="events-header"
-                                                             th:text="${mood.title}">Event Heading</div>
-                                                        <div class="events-body">
-                                                            <div class="row">
-                                                                <div class="events-desc" th:text="${mood.content}">
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </dd>
+                                                        </dd>
                                                     </span>
                                                 </span>
                                             </dl>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div><!--面板1内容结束-->
-
-                                    <div role="tabpanel" class="tab-pane fade" id="safari"
-                                         aria-labelledby="safari-tab">
+                                    <!--右侧-->
+                                    <div role="tabpanel" class="tab-pane fade" id="safari" aria-labelledby="safari-tab">
                                         <div class="gallery-grids" style="margin: 0;padding: 0 3em">
-                                            <div class="gallery-grid">
-                                                <a href="/foreground/images/g1.jpg"
-                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
-                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                                                    <img src="/foreground/images/g1.jpg" alt=" "
-                                                         class="img-responsive zoom-img">
-                                                </a>
-                                                <a href="/foreground/images/g5.jpg"
-                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
-                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                                                    <img src="/foreground/images/g5.jpg" alt=" "
-                                                         class="img-responsive zoom-img">
-                                                </a>
+                                            <div class="VivaTimeline">
+                                                 <dl>
+                                                  <span th:each="timeLine:${timeLineList}">
+                                                     <dt th:text="${timeLine.moodArchiveDate}">May 2016</dt>
+                                                       <span th:each="mood,iterStat:${timeLine.moodVOList}">
+                                                        <dd class="pos-left clearfix wow fadeInLeftBig animated" th:if="${iterStat.odd}==true">
+                                                           <div class="circ"></div>
+                                                             <div class="time" th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
+                                                               <div class="events" style="padding-top: 0px">
+                                                                 <div class="events-body" >
+                                                                   <div class="row">
+                                                                        <div class="gallery-grid" style="padding-left: 15px;padding-right: 15px; width: auto;height:auto">
+                                                                       <a th:href="${mood.pictureUrl}" class="wow fadeInUp animated animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                                                         <img th:src="${mood.pictureUrl}"src="/foreground/images/g1.jpg" alt=" " class="img-responsive zoom-img" style="width: auto;height:auto">
+                                                                       </a>
+                                                                        </div>
+                                                                   </div>
+                                                                 </div>
+                                                               </div>
+                                                        </dd>
+                                                        <dd class="pos-right clearfix wow fadeInRightBig animated" th:if="${iterStat.even}==true">
+                                                            <div class="circ"></div>
+                                                               <div class="time" th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
+                                                                <div class="events" style="padding-top: 0px">
+                                                                     <div class="events-body">
+                                                                        <div class="row">
+                                                                            <div class="gallery-grid" style=" padding-left: 15px;padding-right: 15px;width: auto;height:auto">
+                                                                            <a th:href="${mood.pictureUrl}" class="wow fadeInUp animated animated" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                                                                 <img th:src="${mood.pictureUrl}"src="/foreground/images/g1.jpg" alt=" " class="img-responsive zoom-img" style="width: auto;height:auto">
+                                                                            </a>
+                                                                            </div>
+                                                                        </div>
+                                                                     </div>
+                                                                </div>
+                                                        </dd>
+                                                     </span>
+                                                  </span>
+                                                </dl>
                                             </div>
-                                            <div class="gallery-grid">
-                                                <a href="/foreground/images/g6.jpg"
-                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
-                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                                                    <img src="/foreground/images/g6.jpg" alt=" "
-                                                         class="img-responsive zoom-img">
-                                                </a>
-                                                <a href="/foreground/images/g2.jpg"
-                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
-                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                                                    <img src="/foreground/images/g2.jpg" alt=" "
-                                                         class="img-responsive zoom-img">
-                                                </a>
-                                            </div>
-                                            <div class="gallery-grid">
-                                                <a href="/foreground/images/g3.jpg"
-                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
-                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                                                    <img src="/foreground/images/g3.jpg" alt=" "
-                                                         class="img-responsive zoom-img">
-                                                </a>
-                                                <a href="/foreground/images/g7.jpg"
-                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
-                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                                                    <img src="/foreground/images/g7.jpg" alt=" "
-                                                         class="img-responsive zoom-img">
-                                                </a>
-                                            </div>
-                                            <div class="gallery-grid" data-wow-delay=".3s">
-                                                <a href="/foreground/images/g8.jpg">
-                                                    <img src="/foreground/images/g8.jpg" alt=" "
-                                                         class="img-responsive zoom-img">
-                                                </a>
-                                                <a href="/foreground/images/g4.jpg"
-                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
-                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                                                    <img src="/foreground/images/g4.jpg" alt=" "
-                                                         class="img-responsive zoom-img">
-                                                </a>
-                                            </div>
-                                            <div class="clearfix"></div>
                                         </div>
-                                        <div class="clearfix"></div>
+                                            <div class="clearfix"></div>
                                     </div><!--面板2内容结束-->
-
                                 </div>
                             </div>
                         </div>

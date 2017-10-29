@@ -10,9 +10,16 @@ import java.util.Date;
 public class MoodPO {
     private Integer id;
     private String title;
-
+    private String pictureUrl;
     private String content;
 
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+    }
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date publishTime;

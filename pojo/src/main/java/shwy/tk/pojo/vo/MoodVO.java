@@ -8,9 +8,16 @@ import java.util.Date;
 public class MoodVO {
     private String title;
     private String content;
-
+    private String pictureUrl;
     private Date publishTime;
 
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+    }
 
     public String getTitle() {
         return title;
