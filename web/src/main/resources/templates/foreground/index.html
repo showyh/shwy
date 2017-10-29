@@ -4,23 +4,15 @@
     <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link th:href="@{/foreground/images/blog.ico}" href="../../static/foreground/images/blog.ico" rel="icon"
-          type="image/x-icon">
-    <link th:href="@{/foreground/css/bootstrap.min.css}" href="../../static/foreground/css/bootstrap.min.css"
-          rel="stylesheet" type="text/css"/>
-    <link th:href="@{/foreground/css/style.css}" href="../../static/foreground/css/style.css" rel="stylesheet"
-          type="text/css"/>
-    <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel="stylesheet"
-          type="text/css"/>
-    <link th:href="@{/foreground/css/dropdown.css}" href="../../static/foreground/css/dropdown.css" rel="stylesheet"
-          type="text/css"/>
-    <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css"
-          rel="stylesheet">
-    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}"
-          href="../../static/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
-    <link th:href="@{/foreground/css/jquery.emoji.css}" href="../../static/foreground/css/jquery.emoji.css"
-          rel="stylesheet">
-    <link th:href="@{/foreground/css/player.css}" href="../../static/foreground/css/player.css" rel="stylesheet">
+    <link th:href="@{/foreground/images/blog.ico}"  href="/foreground/images/blog.ico" rel="icon" type="image/x-icon"/>
+    <link th:href="@{/foreground/css/bootstrap.min.css}" href="/foreground/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/style.css}" href="/foreground/css/style.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/mystyle.css}" href="/foreground/css/mystyle.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/dropdown.css}" href="/foreground/css/dropdown.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/animate.min.css}" href="/foreground/css/animate.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}" href="/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.emoji.css}" href="/foreground/css/jquery.emoji.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/player.css}" href="/foreground/css/player.css" rel="stylesheet">
     <!--百度站点统计-->
     <script>
         var _hmt = _hmt || [];
@@ -39,7 +31,7 @@
 <div class="header-bottom" th:include="foreground/common::blogTitle"></div><!--博客标题结束-->
 
 <div class="banner"
-     style="background: url(../../foreground/images/banner-1.jpg) no-repeat 0px 0px;background-size: 100%">
+     style="background: url(/foreground/images/banner-1.jpg) no-repeat 0px 0px;background-size: 100%">
     <div class="container">
         <h2 th:text="${application.signature.title}">愿你出走半生，归来仍是少年</h2>
         <p th:text="${application.signature.content}">三毛说：“心之何如有似万丈迷津，遥亘千里，其中并无舟子可以渡人，除了自渡，他人爱莫能助。” </p>
@@ -48,7 +40,7 @@
 </div><!--鸡汤签名结束-->
 
 <div class="services w3l wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-    <div class="container">
+    <div class="container" >
         <div class="grid_3 grid_5">
             <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
                 <ul id="myTab" class="nav nav-tabs" role="tablist">
@@ -135,11 +127,7 @@
                     <h6>BY <a th:text="${application.recommendBlog.author}">showy </a> <span
                             th:text="${#calendars.format(application.recommendBlog.publishTime,'yyyy-MM-dd')}">2017-04-13</span>
                     </h6>
-                    <p th:text="${application.recommendBlog.summary}">Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.</p>
+                    <p th:text="${application.recommendBlog.summary}">推荐博客概述</p>
                     <div class="bht1">
                         <a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html">继续阅读</a>
                     </div>
@@ -330,24 +318,17 @@
      th:include="foreground/common::copyright"></div><!--版权区结束-->
 <div class="QPlayer" th:include="foreground/common::QPlayer"></div><!--音乐结束-->
 
-<img id="oImg" th:src="@{/foreground/images/xiaolongbao.gif}" src="../../static/foreground/images/xiaolongbao.gif"/>
-
-<script th:src="@{/foreground/js/jquery.min.js}" src="../../static/foreground/js/jquery.min.js"></script>
-<script th:src="@{/foreground/js/bootstrap.min.js}" src="../../static/foreground/js/bootstrap.min.js"></script>
-<script th:src="@{/foreground/js/wow.min.js}" src="../../static/foreground/js/wow.min.js"></script>
-<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}"
-        src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
-<script th:src="@{/foreground/js/modernizr.min.js}" src="../../static/foreground/js/modernizr.min.js"></script>
-<script th:src="@{/foreground/js/jquery.dropdown.js}" src="../../static/foreground/js/jquery.dropdown.js"></script>
-<script th:src="@{/foreground/js/time.js}" src="../../static/foreground/js/time.js"></script>
-<script th:src="@{/foreground/js/jquery.mousewheel.min.js}" src="../../static/foreground/js/jquery.mousewheel.min.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}"
-        src="../../static/foreground/js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
-<script th:src="@{/foreground/js/jquery.emoji.js}" src="../../static/foreground/js/jquery.emoji.js"
-        type="text/javascript"></script>
-<script th:src="@{/foreground/js/xiaolongbao.js}" src="../../static/foreground/js/xiaolongbao.js"></script>
-<script th:src="@{/foreground/js/myjs.js}" src="../../static/foreground/js/myjs.js"></script>
+<script th:src="@{/foreground/js/jquery.min.js}" src="/foreground/js/jquery.min.js"></script>
+<script th:src="@{/foreground/js/bootstrap.min.js}" src="/foreground/js/bootstrap.min.js"></script>
+<script th:src="@{/foreground/js/wow.min.js}" src="/foreground/js/wow.min.js"></script>
+<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}" src="/foreground/js/jquery.svg3dtagcloud.min.js"></script>
+<script th:src="@{/foreground/js/modernizr.min.js}" src="/foreground/js/modernizr.min.js"></script>
+<script th:src="@{/foreground/js/jquery.dropdown.js}" src="/foreground/js/jquery.dropdown.js"></script>
+<script th:src="@{/foreground/js/time.js}" src="/foreground/js/time.js"></script>
+<script th:src="@{/foreground/js/jquery.mousewheel.min.js}" src="/foreground/js/jquery.mousewheel.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}" src="/foreground/js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/jquery.emoji.js}" src="/foreground/js/jquery.emoji.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/myjs.js}" src="/foreground/js/myjs.js"></script>
 <script th:inline="javascript">
     $(document).ready(function () {
         var blogTagList = [[${application.blogTagList}]];

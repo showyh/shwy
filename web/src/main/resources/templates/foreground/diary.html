@@ -4,22 +4,16 @@
     <title>时光轴</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="keywords" content=""/>
-    <link th:href="@{/foreground/images/blog.ico}" href="../../static/foreground/images/blog.ico" rel="icon"
-          type="image/x-icon">
-    <link th:href="@{/foreground/css/bootstrap.min.css}" href="../../static/foreground/css/bootstrap.min.css"
-          rel="stylesheet" type="text/css"/>
-    <link th:href="@{/foreground/css/style.css}" href="../../static/foreground/css/style.css" rel="stylesheet"
-          type="text/css"/>
-    <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel="stylesheet"
-          type="text/css"/>
-    <link th:href="@{/foreground/css/jquery.eeyellow.Timeline.css}"
-          href="../../static/foreground/css/jquery.eeyellow.Timeline.css" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/foreground/css/chocolat.css}" href="../../static/foreground/css/chocolat.css" type="text/css"
-          rel="stylesheet" media="screen"/>
-    <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css"
-          rel="stylesheet">
-    <link th:href="@{/foreground/css/player.css}" href="../../static/foreground/css/player.css" rel="stylesheet">
+    <link th:href="@{/foreground/images/blog.ico}"  href="/foreground/images/blog.ico" rel="icon" type="image/x-icon"/>
+    <link th:href="@{/foreground/css/bootstrap.min.css}" href="/foreground/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/style.css}" href="/foreground/css/style.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/mystyle.css}" href="/foreground/css/mystyle.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/animate.min.css}" href="/foreground/css/animate.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.emoji.css}" href="/foreground/css/jquery.emoji.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/player.css}" href="/foreground/css/player.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.eeyellow.Timeline.css}" href="/foreground/css/jquery.eeyellow.Timeline.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/foreground/css/chocolat.css}" href="/foreground/css/chocolat.css" type="text/css" rel="stylesheet" media="screen"/>
+
     <!--百度站点统计-->
     <script>
         var _hmt = _hmt || [];
@@ -36,16 +30,9 @@
 <div class="header" id="ban" th:include="foreground/common::header"></div><!--头部导航结束-->
 
 <div class="header-bottom" th:include="foreground/common::blogTitle"></div><!--博客标题结束-->
-<!-- banner -->
 
-<!--<div class="banner-1">
-
-</div>-->
-
-
-<!-- technology-left -->
 <div class="technology " data-wow-duration=".8s" data-wow-delay=".2s">
-    <div class="container ">
+    <div class="container " >
         <div class="col-md-12 technology-left" style="width: 100%">
             <div class="blog">
                 <div class="row">
@@ -106,9 +93,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="events-footer">
-                                                             123
-                                                         </div>-->
+
                                                     </div>
                                                 </dd>
                                                     </span>
@@ -197,13 +182,13 @@
      th:include="foreground/common::copyright"></div><!--版权区结束-->
 <div class="QPlayer" th:include="foreground/common::QPlayer"></div><!--音乐结束-->
 
-<script th:src="@{/foreground/js/jquery.min.js}" src="../../static/foreground/js/jquery.min.js"></script>
-<script th:src="@{/foreground/js/bootstrap.min.js}" src="../../static/foreground/js/bootstrap.min.js"></script>
-<script th:src="@{/foreground/js/wow.min.js}" src="../../static/foreground/js/wow.min.js"></script>
-<script th:src="@{/foreground/js/jquery.eeyellow.Timeline.js}"
-        src="../../static/foreground/js/jquery.eeyellow.Timeline.js"></script>
-<script th:src="@{/foreground/js/jquery.chocolat.js}" src="../../static/foreground/js/jquery.chocolat.js"></script>
-<script th:src="@{/foreground/js/myjs.js}" src="../../static/foreground/js/myjs.js"></script>
+<script th:src="@{/foreground/js/jquery.min.js}" src="/foreground/js/jquery.min.js"></script>
+<script th:src="@{/foreground/js/bootstrap.min.js}" src="/foreground/js/bootstrap.min.js"></script>
+<script th:src="@{/foreground/js/wow.min.js}" src="/foreground/js/wow.min.js"></script>
+<script th:src="@{/foreground/js/jquery.emoji.js}" src="/foreground/js/jquery.emoji.js" type="text/javascript"></script>
+<script th:src="@{/foreground/js/myjs.js}" src="/foreground/js/myjs.js"></script>
+<script th:src="@{/foreground/js/jquery.eeyellow.Timeline.js}" src="/foreground/js/jquery.eeyellow.Timeline.js"></script>
+<script th:src="@{/foreground/js/jquery.chocolat.js}" src="/foreground/js/jquery.chocolat.js"></script>
 <script>
     $(document).ready(function () {
         $('.VivaTimeline').vivaTimeline({

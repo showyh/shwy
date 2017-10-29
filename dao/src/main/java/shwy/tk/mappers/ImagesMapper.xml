@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 对应dao接口 -->
+<mapper namespace="shwy.tk.dao.ImagesDAO">
+
+    <resultMap id="imagesResultMap" type="shwy.tk.pojo.po.ImagesPO">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="imageName" property="imagesName" jdbcType="VARCHAR"/>
+        <result column="imageUrl" property="imageUrl" jdbcType="VARCHAR"/>
+        <result column="photoId" property="photoId" jdbcType="INTEGER"/>
+        <association column="photoId" property="photoPO" select="shwy.tk.dao.PhotoDAO.getPhoto"></association>
+
+    </resultMap>
+
+    <sql id="listVO">
+        id,imageName,imageUrl
+    </sql>
+
+    <select id="listImages" resultType="shwy.tk.pojo.vo.ImagesVO" parameterType="Map">
+        select
+        <include refid="listVO"/>
+        from images
+        <where>
+            <if test="photoId!=null">
+                and photoId=#{photoId}
+            </if>
+
+        </where>
+        order by id
+        <if test="start!=null and pageSize!=null">
+            limit #{start},#{pageSize}
+        </if>
+
+    </select>
+
+    <select id="getImagesCount" resultType="Long" parameterType="Map">
+        select count(*) from images
+        <where>
+            <if test="photoId!=null">
+                and photoId=#{photoId}
+            </if>
+
+        </where>
+    </select>
+
+
+</mapper> 

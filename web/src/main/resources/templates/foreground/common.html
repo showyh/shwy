@@ -102,7 +102,7 @@
                  th:each="hotBlog:${session.hotBlogList}">
                 <div class="blog-grid-left">
                     <a href="blog.html" th:href="'/blog/'+${hotBlog.id}">
-                        <img th:src="${hotBlog.coverImageName}" src="../../static/foreground/images/m2.jpg"
+                        <img th:src="${hotBlog.coverImageName}" src="/foreground/images/m2.jpg"
                              class="img-responsive" alt="">
                     </a>
                 </div>
@@ -128,13 +128,25 @@
                 </nav>
 
             </div><!--日期归档结束-->
-
+            <div class="abowman" data-wow-duration=".8s" data-wow-delay=".2s">
+                <object type="application/x-shockwave-flash"
+                        style="outline:none;margin-top: 50px"
+                        data="http://cdn.abowman.com/widgets/hamster/hamster.swf?"
+                        width="240" height="180"
+                        id="__wow_video_player__463292481"
+                        title="Adobe Flash Player">
+                    <param name="movie" value="http://cdn.abowman.com/widgets/hamster/hamster.swf?">
+                    <param name="AllowScriptAccess" value="always">
+                    <param name="wmode" value="opaque">
+                </object>
+            </div><!--小仓鼠结束-->
             <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                 <h4>友情链接</h4>
                 <div class="sim-button button5" th:each="link:${application.linkList}">
                     <a th:href="${link.linkUrl}" target="_blank">
                     <span th:text="${link.linkName}">知乎</span></a></div>
             </div><!--友情链接结束-->
+
         </div>
     </div>
 </div><!--右侧内容结束-->
@@ -201,9 +213,9 @@
         </div>
         <ol id="playlist"></ol>
     </div>
-    <script th:src="@{/foreground/js/jquery.min.js}" src="../../static/foreground/js/jquery.min.js"></script>
+    <script th:src="@{/foreground/js/jquery.min.js}" src="/foreground/js/jquery.min.js"></script>
     <script th:src="@{/foreground/js/jquery.marquee.min.js}"
-            src="../../static/foreground/js/jquery.marquee.min.js"></script>
+            src="/foreground/js/jquery.marquee.min.js"></script>
 
     <script>
         var playlist = [
@@ -613,7 +625,7 @@
         var isRotate = true;
         var autoplay = false;
     </script>
-    <script th:src="@{/foreground/js/player.js}" src="../../static/foreground/js/player.js"></script>
+    <script th:src="@{/foreground/js/player.js}" src="/foreground/js/player.js"></script>
     <script>
 
         function bgChange() {

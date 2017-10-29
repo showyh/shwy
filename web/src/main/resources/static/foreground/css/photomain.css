@@ -1,0 +1,88 @@
+
+/* ==========================================================================
+
+	Google Font
+
+========================================================================== */
+
+@import 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&subset=devanagari,latin-ext';
+
+@import 'https://fonts.googleapis.com/css?family=Oranienbaum&subset=cyrillic,cyrillic-ext,latin-ext';
+
+@font-face {font-family: 'Poppins', sans-serif;font-family: 'Oranienbaum', serif;}
+
+/* ==========================================================================
+
+	Base styles: opinionated defaults
+
+========================================================================== */
+
+body{ background-color:#FFF;font-family: 'Poppins', sans-serif; color:#848484; font-weight:300; font-size:14px; line-height:27px; overflow-x: none}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img, main {display: block}
+
+audio, canvas, video {display: inline-block;*display:inline;*zoom:1}
+
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+
+h1,h2,h3,h4,h5,h6{ color:#343434}
+
+::-moz-selection {background: #222222;color:#ffF;text-shadow: none;}
+
+::selection {background: #222222;color:#ffF;text-shadow: none;}
+
+a,input,textarea,button,body,img{transition-delay: 0s;transition-duration: 0.6s;transition-property: all;transition-timing-function: ease;}
+
+a {text-decoration: none;outline: none;color: #222222;}
+
+a:hover{ text-decoration:none; color:#222222}
+
+a:focus, img:focus, button:focus, .btn:focus {outline:none;text-decoration: none;}
+
+/* ==========================================================================
+
+	Header styles
+
+========================================================================== */
+
+/* ==========================================================================
+
+	Main Wrapper
+
+========================================================================== */
+
+.main-wrapper,.main-wrapper-inner{background-color:#FFF;position:relative; z-index:6;}
+
+.wrapper{background-color:#FFF; padding:0 25px;position:relative; z-index:6; margin-bottom:396px}
+
+.main-wrapper-inner{ margin-bottom:396px}
+
+.wrapper-inner{ margin:auto; width:100%; max-width:1031px; padding-top:71px; padding-bottom:20px}
+
+.inner-left{ float:left; width:100%; max-width:331px}
+
+.inner-right{ float:right; width:100%; max-width:700px}
+
+.wrapper-inner p{ color:#343434; font-size:13px; line-height:30px; font-weight:400;padding-bottom:20px; font-weight:300}
+
+/* ==========================================================================
+
+	Details Gallery
+
+========================================================================== */
+
+.details-content,.about-content,.contact-wrapper{ overflow:hidden}
+
+.details-left header h3,.about-content h3{ color:#343434; margin-top:0}
+
+.details-left header h4,.details-left header h5{ font-size:13px; margin-top:0; font-weight:400}
+
+.details-left header h4{ font-weight:600; padding-top:22px}
+
+.details-content header{ margin-bottom:67px}
+
+.details-content header h2,.details-content header h3{ font-size:13px; font-weight:400;margin-top:0}
+
+.details-content header h2{ font-weight:600; }
+
+.details-image{ margin-bottom:80px}

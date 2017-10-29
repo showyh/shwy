@@ -161,7 +161,7 @@ label.icon-search span {
 }
 
 .social-icons ul li a {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/social-icons.png) no-repeat -3px -2px;
+    background: url(../images/social-icons.png) no-repeat -3px -2px;
     display: block;
     height: 22px;
     width: 20px;
@@ -573,24 +573,24 @@ i.glyphicon.glyphicon-comment {
 }
 
 .soci ul li a.fb {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/social.png) no-repeat -48px -7px;
+    background: url(../images/social.png) no-repeat -48px -7px;
 }
 
 .soci ul li a.twit {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/social.png) no-repeat -7px -7px;
+    background: url(../images/social.png) no-repeat -7px -7px;
 }
 
 /*-- agileits --*/
 .soci ul li a.goog {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/social.png) no-repeat -88px -7px;
+    background: url(../images/social.png) no-repeat -88px -7px;
 }
 
 .soci ul li a.pin {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/social.png) no-repeat -130px -7px;
+    background: url(../images/social.png) no-repeat -130px -7px;
 }
 
 .soci ul li a.drib {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/social.png) no-repeat -171px -7px;
+    background: url(../images/social.png) no-repeat -171px -7px;
 }
 
 /*--technology-left--*/
@@ -704,7 +704,7 @@ i.glyphicon.glyphicon-comment {
 }
 
 .search-1 form input[type="submit"] {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/key2.png) no-repeat 13px 9px;
+    background: url(../images/key2.png) no-repeat 13px 9px;
     width: 40px;
     height: 32px;
     border: none;
@@ -1035,35 +1035,35 @@ ul.social li {
 }
 
 .social li a.social-twitter i {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/img-sp.png) no-repeat -25px 11px #3D99DC;
+    background: url(../images/img-sp.png) no-repeat -25px 11px #3D99DC;
     display: block;
     width: 40px;
     height: 40px;
 }
 
 .social li a.social-google i {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/img-sp.png) no-repeat -63px 10px #3D99DC;
+    background: url(../images/img-sp.png) no-repeat -63px 10px #3D99DC;
     display: block;
     width: 40px;
     height: 40px;
 }
 
 .social li a.social-facebook i {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/img-sp.png) no-repeat 8px 11px #3D99DC;
+    background: url(../images/img-sp.png) no-repeat 8px 11px #3D99DC;
     display: block;
     width: 40px;
     height: 40px;
 }
 
 .social li a.social-pinterest i {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/img-sp.png) no-repeat -93px 11px #3D99DC;
+    background: url(../images/img-sp.png) no-repeat -93px 11px #3D99DC;
     display: block;
     width: 40px;
     height: 40px;
 }
 
 .social li a.social-instagram i {
-    background: url(http://oxfsru7sz.bkt.clouddn.com/images/img-sp.png) no-repeat -129px 9px #3D99DC;
+    background: url(../images/img-sp.png) no-repeat -129px 9px #3D99DC;
     display: block;
     width: 40px;
     height: 40px;

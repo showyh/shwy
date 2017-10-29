@@ -130,7 +130,7 @@ public class BlogListController {
         //获取总记录数
         Long count = blogService.getBlogCount(param);
         //拼装分页代码
-        String targetUrl = "/blog/list/";
+        String targetUrl = "/blog/list";
         String pageNation = PageUtil.getPageNation(count, targetUrl, pageBean.getPage(), pageBean.getPageSize());
 
         mav.addObject("blogList", blogList);

@@ -4,9 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 对应dao接口 -->
 <mapper namespace="shwy.tk.dao.PhotoDAO">
-
+    <resultMap id="photoResultMap" type="shwy.tk.pojo.po.PhotoPO">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="photoName" property="photoName" jdbcType="VARCHAR"/>
+        <result column="description" property="description" jdbcType="VARCHAR"/>
+        <result column="coverImage" property="coverImage" jdbcType="VARCHAR"/>
+        <result column="author" property="author" jdbcType="VARCHAR"/>
+    </resultMap>
     <select id="listPhoto" resultType="shwy.tk.pojo.po.PhotoPO" parameterType="Map">
-        select * from photo order by id DESC
+        select * from photo order by id
         <if test="start!=null and pageSize!=null">
             limit #{start},#{pageSize}
         </if>
@@ -15,6 +21,10 @@
 
     <select id="getPhotoCount" resultType="Long" parameterType="Map">
         select count(*) from photo
+    </select>
+
+    <select id="getPhoto" resultMap="photoResultMap">
+        select * FROM photo where id=#{PhotoId}
     </select>
 
 </mapper>
