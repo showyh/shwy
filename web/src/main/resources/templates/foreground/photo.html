@@ -40,13 +40,13 @@
                             <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3 masonry">
                                 <li class="masonry-item grid" th:each="photo:${photoList}">
                                     <figure class="effect-sarah">
-                                        <a th:href="'/photo/'+${photo.id}" href="/images/list">
+                                        <a th:href="'/images/'+${photo.id}" href="images.html">
                                             <img th:src="${photo.coverImage}"  src="/foreground/images/coverImage/photo/20171015132848.jpg" alt="相册封面" />
                                         </a>
                                         <figcaption>
                                             <h2 th:text="${photo.photoName}">相册名称 By <span th:text="${photo.author}">上传者</span></h2>
                                             <p th:text="${photo.description}">相册描述</p>
-                                            <a href="/images/list">进入相册</a> </figcaption>
+                                            <a th:href="'/images/'+${photo.id}" href="images.html">进入相册</a> </figcaption>
                                     </figure>
                                 </li>
                             </ul>

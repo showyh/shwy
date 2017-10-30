@@ -10,8 +10,6 @@
         <result column="imageName" property="imagesName" jdbcType="VARCHAR"/>
         <result column="imageUrl" property="imageUrl" jdbcType="VARCHAR"/>
         <result column="photoId" property="photoId" jdbcType="INTEGER"/>
-        <association column="photoId" property="photoPO" select="shwy.tk.dao.PhotoDAO.getPhoto"></association>
-
     </resultMap>
 
     <sql id="listVO">
@@ -19,16 +17,13 @@
     </sql>
 
     <select id="listImages" resultType="shwy.tk.pojo.vo.ImagesVO" parameterType="Map">
-        select
-        <include refid="listVO"/>
-        from images
-        <where>
-            <if test="photoId!=null">
-                and photoId=#{photoId}
-            </if>
-
-        </where>
-        order by id
+        SELECT
+        photo.photoName,
+        images.imageName,
+        images.imageUrl,
+        images.id
+        FROM images INNER JOIN photo ON images.photoId = photo.id
+        WHERE images.photoId = #{photoId} order by id
         <if test="start!=null and pageSize!=null">
             limit #{start},#{pageSize}
         </if>

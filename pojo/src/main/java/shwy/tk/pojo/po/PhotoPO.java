@@ -5,18 +5,10 @@ package shwy.tk.pojo.po;
  */
 public class PhotoPO {
     private Integer id;
-    private  String photoName;
+    private String photoName;
     private String description;
     private String coverImage;
     private String author;
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
 
     public Integer getId() {
         return id;
@@ -48,5 +40,13 @@ public class PhotoPO {
 
     public void setCoverImage(String coverImage) {
         this.coverImage = coverImage;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }

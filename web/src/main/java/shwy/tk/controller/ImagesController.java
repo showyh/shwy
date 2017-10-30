@@ -26,14 +26,13 @@ public class ImagesController {
     private ImagesService imagesService;
 
 
-    //获取相册列表
-    @RequestMapping(value = "/images/list", method = RequestMethod.GET)
-    public String imagesList() {
-        return "redirect:/images/list/1";
+    //获取相片列表
+    @RequestMapping(value = "/images/{photoId}", method = RequestMethod.GET)
+    public String imagesList(@PathVariable Integer photoId) {
+        return "redirect:/images/" + photoId + "/list/1";
     }
-
-    @RequestMapping(value = "/images/list/{page}", method = RequestMethod.GET)
-    public ModelAndView imagesList(@PathVariable String page) {
+    @RequestMapping(value = "/images/{photoId}/list/{page}", method = RequestMethod.GET)
+    public ModelAndView imagesList(@PathVariable Integer photoId,@PathVariable String page) {
         ModelAndView mav = new ModelAndView("foreground/images");
         HashMap<String, Object> param = new HashMap<>();
         //拼装分页参数
@@ -41,17 +40,18 @@ public class ImagesController {
         param.put("start", pageBean.getStart());
         param.put("pageSize", pageBean.getPageSize());
         //拼装筛选参数
+        param.put("photoId", photoId);
         List<ImagesVO> imagesList = imagesService.listImages(param);
 
         //获取总记录数
         Long count = imagesService.getImagesCount(param);
         //拼装分页代码
-        String targetUrl = "/images/list";
+        String targetUrl = "/images/" + photoId + "/list";
         String pageNation = PageUtil.getPageNation(count, targetUrl, pageBean.getPage(), pageBean.getPageSize());
 
         mav.addObject("imagesList", imagesList);
         mav.addObject("pageNation", pageNation);
         return mav;
-    }
 
+    }
 }

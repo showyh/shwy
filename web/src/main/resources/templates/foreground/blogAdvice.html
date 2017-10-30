@@ -35,7 +35,7 @@
 
 
 <!-- technology-left -->
-<div class="technology">
+<div class="technology" >
     <div class="container" >
         <div class="col-md-12 technology-left" style="width: 100%">
             <div class="blog">
@@ -55,7 +55,7 @@
                             </div><!--输入框结束-->
                             <hr id="responseHr">
                             <div class="response" th:each="blogAdvice:${blogAdviceList}">
-                                <div class="media response-info">
+                                <div class="media response-info" >
                                     <div>
                                         <div class="media-left response-text-left">
                                             <a href="#">
@@ -159,7 +159,6 @@
 <script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}" src="/foreground/js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
 <script th:src="@{/foreground/js/jquery.emoji.js}" src="/foreground/js/jquery.emoji.js" type="text/javascript"></script>
 <script th:src="@{/foreground/plugin/layer/layer.js}" src="/foreground/plugin/layer/layer.js" type="text/javascript"></script>
-
 <script>
     window.onload = function () {
         $("#content").emoji({

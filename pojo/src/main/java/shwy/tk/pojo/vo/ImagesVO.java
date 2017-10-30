@@ -4,18 +4,9 @@ package shwy.tk.pojo.vo;
  * Created by shwy on 2017/10/27.
  */
 public class ImagesVO {
-    private Integer id;
     private String imageName;
     private String imageUrl;
-    private String photoName;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private String PhotoName;
 
     public String getImageName() {
         return imageName;
@@ -34,11 +25,10 @@ public class ImagesVO {
     }
 
     public String getPhotoName() {
-        return photoName;
+        return PhotoName;
     }
 
     public void setPhotoName(String photoName) {
-        this.photoName = photoName;
+        PhotoName = photoName;
     }
-
 }

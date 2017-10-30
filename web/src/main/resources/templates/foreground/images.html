@@ -39,7 +39,7 @@
                         <img th:src="${images.imageUrl}"  src="/foreground/images/portfolio/1.jpg" alt="img01"/>
                         <figcaption>
                             <h2 style="font-size: x-large" th:text="${images.imageName}">照片名称</h2>
-                            <p th:text="${images.imageName}">照片描述</p><br>
+                            <p th:text="${images.photoName}">相册名称</p><br>
                             <p><a th:href="${images.imageUrl}" href="/foreground/images/portfolio/1.jpg" th:title="${images.imageName}" data-gallery>View more</a></p>
                         </figcaption>
                     </figure>

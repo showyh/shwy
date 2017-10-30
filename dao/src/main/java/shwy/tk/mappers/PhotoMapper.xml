@@ -23,8 +23,5 @@
         select count(*) from photo
     </select>
 
-    <select id="getPhoto" resultMap="photoResultMap">
-        select * FROM photo where id=#{PhotoId}
-    </select>
 
 </mapper>
