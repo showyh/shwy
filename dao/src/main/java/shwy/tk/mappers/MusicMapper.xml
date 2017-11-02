@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 对应dao接口 -->
+<mapper namespace="shwy.tk.dao.MusicDAO">
+
+    <resultMap id="musicResultMap" type="shwy.tk.pojo.po.MusicPO">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="singer" property="singer" jdbcType="VARCHAR"/>
+        <result column="src" property="src" jdbcType="VARCHAR"/>
+        <result column="img" property="img" jdbcType="VARCHAR"/>
+        <result column="lrc" property="lrc" jdbcType="VARCHAR"/>
+        <result column="time" property="time" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+    <sql id="listPO">
+         dan,img,singer,src,name,id,time,lrc
+    </sql>
+
+    <select id="musicPO" resultMap="musicResultMap" parameterType="Map">
+        select
+        <include refid="listPO"/>
+        from music where dan=#{dan}
+    </select>
+</mapper>

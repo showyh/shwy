@@ -13,7 +13,7 @@
     <link th:href="@{/foreground/css/animate.min.css}" href="/foreground/css/animate.min.css" rel="stylesheet">
     <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}" href="/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
     <link th:href="@{/foreground/css/jquery.emoji.css}" href="/foreground/css/jquery.emoji.css" rel="stylesheet">
-    <link th:href="@{/foreground/css/player.css}" href="/foreground/css/player.css" rel="stylesheet">
+
     <!--代码高亮-->
     <link th:href="@{/foreground/css/shCore.min.css}" href="/foreground/css/shCore.min.css" rel="stylesheet">
     <link th:href="@{/foreground/css/shThemeEclipse.min.css}" href="/foreground/css/shThemeEclipse.min.css" rel="stylesheet">
@@ -40,8 +40,6 @@
 <div class="header" id="ban" th:include="foreground/common::header"></div><!--头部导航结束-->
 
 <div class="header-bottom" th:include="foreground/common::blogTitle"></div><!--博客标题结束-->
-
-<!--<div class="banner-1"></div>-->
 
 <!-- technology-left -->
 <div class="technology">
@@ -151,7 +149,7 @@
 
 <div class="copyright wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s"
      th:include="foreground/common::copyright"></div><!--版权区结束-->
-<div class="QPlayer" th:include="foreground/common::QPlayer"></div><!--音乐结束-->
+<div class="mp" th:include="foreground/common::mp"></div><!--音乐结束-->
 
 <script th:src="@{/foreground/js/jquery.min.js}" type="text/javascript" src="/foreground/js/jquery.min.js"></script>
 <script th:src="@{/foreground/js/bootstrap.min.js}" type="text/javascript" src="/foreground/js/bootstrap.min.js"></script>

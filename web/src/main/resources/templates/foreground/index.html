@@ -12,7 +12,7 @@
     <link th:href="@{/foreground/css/animate.min.css}" href="/foreground/css/animate.min.css" rel="stylesheet">
     <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}" href="/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
     <link th:href="@{/foreground/css/jquery.emoji.css}" href="/foreground/css/jquery.emoji.css" rel="stylesheet">
-    <link th:href="@{/foreground/css/player.css}" href="/foreground/css/player.css" rel="stylesheet">
+
     <!--百度站点统计-->
     <script>
         var _hmt = _hmt || [];
@@ -60,30 +60,30 @@
                     <div role="tabpanel" class="tab-pane fade" id="expeditions" aria-labelledby="expeditions-tab">
 
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img th:src="@{/foreground/images/f2.jpg}" src="../../static/foreground/images/f2.jpg"
+                            <img th:src="@{/foreground/images/f2.jpg}" src="/foreground/images/f2.jpg"
                                  class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img th:src="@{/foreground/images/f4.jpg}" src="../../static/foreground/images/f4.jpg"
+                            <img th:src="@{/foreground/images/f4.jpg}" src="/foreground/images/f4.jpg"
                                  class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img th:src="@{/foreground/images/f3.jpg}" src="../../static/foreground/images/f3.jpg"
+                            <img th:src="@{/foreground/images/f3.jpg}" src="/foreground/images/f3.jpg"
                                  class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="clearfix"></div>
                     </div><!--tab1内容结束-->
                     <div role="tabpanel" class="tab-pane fade" id="safari" aria-labelledby="safari-tab">
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img th:src="@{/foreground/images/t1.jpg}" src="../../static/foreground/images/t1.jpg"
+                            <img th:src="@{/foreground/images/t1.jpg}" src="/foreground/images/t1.jpg"
                                  class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img th:src="@{/foreground/images/t2.jpg}" src="../../static/foreground/images/t2.jpg"
+                            <img th:src="@{/foreground/images/t2.jpg}" src="/foreground/images/t2.jpg"
                                  class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img th:src="@{/foreground/images/t3.jpg}" src="../../static/foreground/images/t3.jpg"
+                            <img th:src="@{/foreground/images/t3.jpg}" src="/foreground/images/t3.jpg"
                                  class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="clearfix"></div>
@@ -91,15 +91,15 @@
                     <div role="tabpanel" class="tab-pane fade active in" id="trekking" aria-labelledby="trekking-tab">
 
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img th:src="@{/foreground/images/m2.jpg}" src="../../static/foreground/images/m2.jpg"
+                            <img th:src="@{/foreground/images/m2.jpg}" src="/foreground/images/m2.jpg"
                                  class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img th:src="@{/foreground/images/m1.jpg}" src="../../static/foreground/images/m1.jpg"
+                            <img th:src="@{/foreground/images/m1.jpg}" src="/foreground/images/m1.jpg"
                                  class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img th:src="@{/foreground/images/m3.jpg}" src="../../static/foreground/images/m3.jpg"
+                            <img th:src="@{/foreground/images/m3.jpg}" src="/foreground/images/m3.jpg"
                                  class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="clearfix"></div>
@@ -121,7 +121,7 @@
                     <div class="tch-img">
                         <a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html"><img
                                 th:src="${application.recommendBlog.coverImageName}"
-                                src="../../static/foreground/images/t4.jpg" class="img-responsive" style="width: 100%"
+                                src="/foreground/images/t4.jpg" class="img-responsive" style="width: 100%"
                                 alt=""></a>
                     </div>
                     <h6>BY <a th:text="${application.recommendBlog.author}">showy </a> <span
@@ -240,7 +240,7 @@
                         <div class="tch-img">
                             <a th:href="'/blog/'+${newBlogList[3].id}" href="blog.html">
                                 <img th:src="${newBlogList[3].coverImageName}"
-                                     src="../../static/foreground/images/f1.jpg" class="img-responsive">
+                                     src="/foreground/images/f1.jpg" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -273,7 +273,7 @@
                         <div class="tch-img">
                             <a th:href="'/blog/'+${newBlogList[4].id}" href="blog.html">
                                 <img th:src="${newBlogList[4].coverImageName}"
-                                     src="../../static/foreground/images/f1.jpg" class="img-responsive">
+                                     src="/foreground/images/f1.jpg" class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -316,7 +316,7 @@
 
 <div class="copyright wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s"
      th:include="foreground/common::copyright"></div><!--版权区结束-->
-<div class="QPlayer" th:include="foreground/common::QPlayer"></div><!--音乐结束-->
+<div class="mp" th:include="foreground/common::mp"></div><!--音乐结束-->
 
 <script th:src="@{/foreground/js/jquery.min.js}" src="/foreground/js/jquery.min.js"></script>
 <script th:src="@{/foreground/js/bootstrap.min.js}" src="/foreground/js/bootstrap.min.js"></script>
