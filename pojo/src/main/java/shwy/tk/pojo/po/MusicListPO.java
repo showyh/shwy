@@ -6,9 +6,6 @@ package shwy.tk.pojo.po;
 public class MusicListPO {
     private Integer id;
     private boolean basic;
-
-
-
     private String music_list_name;
     private String img;
     private String singer;

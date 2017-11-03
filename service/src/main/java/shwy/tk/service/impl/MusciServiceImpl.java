@@ -16,10 +16,9 @@ public class MusciServiceImpl implements MusicService {
 
     @Autowired
     private MusicDAO musicDAO;
+
     @Override
-    public  List<MusicPO> musicPO(int dan) {
+    public List<MusicPO> musicPO(int dan) {
         return musicDAO.musicPO(dan);
     }
-
-
 }

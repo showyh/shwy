@@ -26,10 +26,16 @@ public class PlayerController {
     public  List<Object> PlayerPO() {
           List<Object> listPlayerPO = new ArrayList<>();
           List<MusicListPO> musicListPO=musicListService.musicListPO();
-            int dan=0; dan++;
-            List<MusicPO> musicPO=musicService.musicPO(dan);
-            listPlayerPO.add(musicListPO);
-            listPlayerPO.add(musicPO);
+         // List< List<MusicPO>> Music=new ArrayList<>();
+          listPlayerPO.add(musicListPO);
+          for(int i=0;i<musicListPO.size();i++){
+              MusicListPO musicList=musicListPO.get(i);
+              int dan=musicList.getId();
+              List<MusicPO> musicPO=musicService.musicPO(dan);
+              listPlayerPO.add(musicPO);
+          }
+
+           // listPlayerPO.add(Music);
             return listPlayerPO;
     }
 }

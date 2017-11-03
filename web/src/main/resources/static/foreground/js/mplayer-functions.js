@@ -4,14 +4,14 @@
  */
 
 function setEffects (player) {
-	// 滑块
+	/*// 滑块改变音量的js与项目有有冲突 注释掉改变声音的功能
 	player.dom.volRange.nstSlider({
 		"left_grip_selector": ".mp-vol-circle",
 		"value_changed_callback": function(cause, value) {
 			player.dom.container.find('.mp-vol-current').width(value + '%');
 			player.dom.volRange.trigger('change',[value]);
 		}
-	});
+	});*/
 	player.dom.container.find('.mp-mode').click(function () {
 		var dom = $(this);
 		var mode = player.getPlayMode();

@@ -9,5 +9,6 @@ import java.util.List;
  */
 
 public interface MusicService {
-     List<MusicPO> musicPO(int dan);
+
+    List<MusicPO> musicPO(int dan);
 }
