@@ -26,7 +26,7 @@ public class PlayerController {
     public  List<Object> PlayerPO() {
           List<Object> listPlayerPO = new ArrayList<>();
           List<MusicListPO> musicListPO=musicListService.musicListPO();
-         // List< List<MusicPO>> Music=new ArrayList<>();
+
           listPlayerPO.add(musicListPO);
           for(int i=0;i<musicListPO.size();i++){
               MusicListPO musicList=musicListPO.get(i);
@@ -34,8 +34,6 @@ public class PlayerController {
               List<MusicPO> musicPO=musicService.musicPO(dan);
               listPlayerPO.add(musicPO);
           }
-
-           // listPlayerPO.add(Music);
             return listPlayerPO;
     }
 }
