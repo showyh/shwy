@@ -24,7 +24,6 @@ public class LoginController {
     @Autowired
     private AdminService adminService;
 
-
     @RequestMapping(value = "/background", method = RequestMethod.GET)
     public String goBackground() {
         return "background/index";

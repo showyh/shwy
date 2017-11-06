@@ -85,7 +85,7 @@
         loginHtml += '<div class="layui-form-item">';
         loginHtml += '<label class="layui-form-label">人机验证</label>';
         loginHtml += '<div class="layui-input-inline pm-login-input">';
-        loginHtml += '<div class="l-captcha" lay-verify="result_response" data-site-key="0c5f2ddcf3eb0f58a678e0c50e0d736e"></div>';
+        loginHtml += '<div class="l-captcha" lay-verify="result_response" data-site-key="3794abff3a88f29e4ab6ec886117c005"><!--网站key--></div>';
         loginHtml += '</div>';
         loginHtml += '</div>';
         loginHtml += '<div class="layui-form-item" style="margin-top:25px;margin-bottom:0;">';
