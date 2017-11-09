@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>写博客页面</title>
-    <link th:href="@{/background/plugin/layui/css/layui.css}" href="../../static/background/plugin/layui/css/layui.css" rel="stylesheet" />
-
+    <link th:href="@{/background/plugin/layui/css/layui.css}" href="/background/plugin/layui/css/layui.css" rel="stylesheet" />
     <style>
         .layui-form-selected dl{
             z-index: 1000;
@@ -196,8 +195,6 @@
                 });
             }
         };
-
-
         exports('datalist', datalist);
     });
 

@@ -72,8 +72,8 @@
                         <div>
                             <div class="media-left response-text-left">
                                 <a href="#">
-                                    <img th:src="@{/foreground/images/sin2.jpg}"
-                                         src="/foreground/images/sin1.jpg" class="img-responsive" alt=""
+                                    <img th:src="@{/foreground/images/sin1.png}"
+                                         src="/foreground/images/sin1.png" class="img-responsive" alt=""
                                          style="width: 50px">
                                 </a>
                             </div>
@@ -93,13 +93,13 @@
                                         <div th:each="reply:${comment.commentReplyVOList}"
                                              th:class="'replyPanel'+${comment.id}" class="replyPanel">
                                             <a>
-                                                <img th:src="@{/foreground/images/sin1.jpg}" th:if="${reply.role}==true"
-                                                     src="/foreground/images/sin2.jpg"
+                                                <img th:src="@{/foreground/images/sin1.png}" th:if="${reply.role}==true"
+                                                     src="/foreground/images/sin1.png"
                                                      class="img-responsive"
                                                      alt="" style="width: 50px">
-                                                <img th:src="@{/foreground/images/sin2.jpg}"
+                                                <img th:src="@{/foreground/images/sin1.png}"
                                                      th:if="${reply.role}==false"
-                                                     src="/foreground/images/sin2.jpg"
+                                                     src="/foreground/images/sin1.png"
                                                      class="img-responsive"
                                                      alt="" style="width: 50px">
                                             </a>
@@ -204,7 +204,7 @@
                     $("<div class='response'>" +
                         "<div class='media response-info'>" +
                         "<div>" +
-                        "<div class='media-left response-text-left'><a href='#'><img src='/foreground/images/sin2.jpg' class='img-responsive' style='width: 50px'></a></div>" +
+                        "<div class='media-left response-text-left'><a href='#'><img src='/foreground/images/sin1.png' class='img-responsive' style='width: 50px'></a></div>" +
                         "<div class='media-body response-text-right'><p ><span class='sourceText'>" + result.nickName + " : " + result.content + "</span></p><ul>" +
                         "<li>" + result.publishTime + "</li>" +
                         "<li><a href='javascript:showReply(" + result.id + ")' id='replyButton" + result.id + "'>回复</a></li></ul><div class='media response-info'><div class='media-left response-text-left' style='width: 100%'>" +
@@ -248,10 +248,10 @@
                     var imgSrc;
                     var title;
                     if (result.role) {
-                        imgSrc = '/foreground/images/sin1.jpg';
+                        imgSrc = '/foreground/images/sin1.png';
                         title = ' 博主回复 : ';
                     } else {
-                        imgSrc = '/foreground/images/sin2.jpg';
+                        imgSrc = '/foreground/images/sin1.png';
                         title = ' 楼主回复 : ';
                     }
                     var replyPanel = document.getElementsByClassName('replyPanel' + commentId);
