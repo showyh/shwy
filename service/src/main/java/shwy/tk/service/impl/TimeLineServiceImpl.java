@@ -3,6 +3,7 @@ package shwy.tk.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import shwy.tk.dao.MoodDAO;
+import shwy.tk.pojo.po.MoodPO;
 import shwy.tk.pojo.vo.MoodVO;
 import shwy.tk.pojo.vo.TimeLineVO;
 import shwy.tk.service.TimeLineService;
@@ -47,4 +48,25 @@ public class TimeLineServiceImpl implements TimeLineService {
         return timeLineVOList;
     }
 
+    @Override
+    public List<MoodPO> listMoodPO(HashMap<String, Object> param) {
+        List<MoodPO> moodList = moodDAO.listMoodPO(param);
+        return moodList;
+    }
+
+    @Override
+    public Long getMoodCount() {
+        return moodDAO.getMoodCount();
+    }
+
+    @Override
+    public int updateMood(MoodPO moodPO) {
+        return moodDAO.updateMood(moodPO);
+    }
+
+    @Override
+    public int addMood(MoodPO moodPO) {
+        return moodDAO.addMood(moodPO);
+
+    }
 }

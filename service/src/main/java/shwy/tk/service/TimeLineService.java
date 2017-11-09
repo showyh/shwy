@@ -1,7 +1,9 @@
 package shwy.tk.service;
 
+import shwy.tk.pojo.po.MoodPO;
 import shwy.tk.pojo.vo.TimeLineVO;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -10,5 +12,13 @@ import java.util.List;
 public interface TimeLineService {
 
     List<TimeLineVO> listTimeLine();
+
+    List<MoodPO> listMoodPO(HashMap<String, Object> param);
+
+    Long getMoodCount();
+
+    int updateMood(MoodPO moodPO);
+
+    int addMood(MoodPO moodPO);
 
 }

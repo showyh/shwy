@@ -3,6 +3,7 @@
     var $ = layui.jquery;
     //自定义验证
     form.verify({
+        /* ^是开始 \s是空白  *表示0个或多个  |是或者  $是结尾  g表示全局*/
         passWord: [/^[\S]{6,12}$/, '密码必须6到12位'],
         account: function (value) {
             if (value.length <= 0 || value.length > 10) {
@@ -25,7 +26,8 @@
         var index = layer.load(1);
 
         layer.close(index);
-
+        //解析首页穿回来的IP JSON数据
+      /*  var returnCitySN = {"cip": "124.93.196.26", "cid": "210200", "cname": "辽宁省大连市"};*/
         var ip = returnCitySN["cip"];
         var ipName = returnCitySN["cname"];
         var loginTime = new Date();
@@ -42,13 +44,13 @@
 
             },
             success: function (result) {
-                var result = eval("(" + result + ")");
+                var result = eval("(" + result + ")");//转换为json对象
                 if (result.success) {
                     layer.msg('登陆成功，正在跳转......', {icon: 6});
                     layer.closeAll('page');
                     setTimeout(function () {
                         location.href = "/admin/main";
-                    }, 1000);
+                    }, 1000);//等待1秒
                 } else {
                     layer.msg('账号或者密码错误', {icon: 5});
                 }

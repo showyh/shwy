@@ -16,7 +16,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </sql>
 
     <select id="listBlogAdvicePO" resultMap="blogAdviceResultMap" parameterType="shwy.tk.pojo.bo.PageBeanBO">
-        select <include refid="listPO"/> from blogadvice order by publishTime desc limit #{start} , #{pageSize}
+        select
+        <include refid="listPO"/>
+        from blogadvice order by publishTime desc limit #{start} , #{pageSize}
     </select>
 
     <select id="getBlogAdviceCount" resultType="Long">
