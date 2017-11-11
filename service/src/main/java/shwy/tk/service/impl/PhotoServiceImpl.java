@@ -27,4 +27,30 @@ public class PhotoServiceImpl implements PhotoService{
         return photoDAO.getPhotoCount(param);
     }
 
+    @Override
+    public int updatePhoto(PhotoPO photoPO) {
+        return photoDAO.updatePhoto(photoPO);
+    }
+
+    @Override
+    public int addPhoto(PhotoPO photoPO) {
+        return photoDAO.addPhoto(photoPO);
+    }
+
+    @Override
+    public PhotoPO getPhoto(Integer id) {
+        return photoDAO.getPhoto(id);
+    }
+
+
+    @Override
+    public int deletePhoto(Integer id) {
+        return photoDAO.deletePhoto(id);
+    }
+
+    @Override
+    public List<PhotoPO> listAllPhoto() {
+        return photoDAO.listAllPhoto();
+    }
+
 }

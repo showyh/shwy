@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link th:href="@{/foreground/images/blog.ico}" href="/foreground/images/blog.ico" rel="icon" type="image/x-icon"/>
+    <link th:href="@{/foreground/css/mplayer.css}" href="/foreground/css/mplayer.css" rel="stylesheet">
     <link th:href="@{/foreground/css/bootstrap.min.css}" href="/foreground/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link th:href="@{/foreground/css/photo.min.css}" href="/foreground/css/photo.min.css" rel="stylesheet" type="text/css"/>
     <link th:href="@{/foreground/css/photoset.css}" href="/foreground/css/photoset.css" rel="stylesheet" type="text/css"/>
@@ -43,7 +44,7 @@
                                             <img th:src="${photo.coverImage}"  src="/foreground/images/coverImage/photo/20171015132848.jpg" alt="相册封面" />
                                         </a>
                                         <figcaption>
-                                            <h2 th:text="${photo.photoName}">相册名称 By <span th:text="${photo.author}">上传者</span></h2>
+                                            <h2 th:text="${photo.photoName}+' by '+${photo.author}">相册名称</h2>
                                             <p th:text="${photo.description}">相册描述</p>
                                             <a th:href="'/images/'+${photo.id}" href="images.html">进入相册</a> </figcaption>
                                     </figure>
@@ -66,13 +67,50 @@
 <div class="mp" th:include="foreground/common::mp"></div><!--音乐结束-->
 
 <script th:src="@{/foreground/js/jquery.min.js}" src="/foreground/js/jquery.min.js"></script>
+<script th:src="@{/foreground/js/mplayer.js}" src="/foreground/js/mplayer.js"></script>
+<script th:src="@{/foreground/js/public.js}" src="/foreground/js/public.js"></script>
+<script th:src="@{/foreground/js/mplayer-functions.js}" src="/foreground/js/mplayer-functions.js"></script>
+<script th:src="@{/foreground/js/jquery.nstSlider.js}" src="/foreground/js/jquery.nstSlider.js"></script>
 <script th:src="@{/foreground/js/photo.masonry.pkgd.min.js}"  src="/foreground/js/photo.masonry.pkgd.min.js" type="text/javascript"></script>
 <script th:src="@{/foreground/js/photo.loaded.pkgd.min.js}" src="/foreground/js/photo.loaded.pkgd.min.js" type="text/javascript"></script>
 <script th:src="@{/foreground/js/bootstrap.min.js}" src="/foreground/js/bootstrap.min.js"></script>
 <script th:src="@{/foreground/js/photomain.js}" src="/foreground/static/js/photomain.js" type="text/javascript"></script>
 <script th:src="@{/foreground/js/photo.jquery.nicescroll.min.js}" src="/foreground/static/js/photo.jquery.nicescroll.min.js" type="text/javascript"></script>
 <script th:src="@{/foreground/js/wow.min.js}" src="/foreground/js/wow.min.js"></script>
+<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}" src="/foreground/js/jquery.svg3dtagcloud.min.js"></script>
 <script th:src="@{/foreground/js/jquery.emoji.js}"  src="/foreground/js/jquery.emoji.js" type="text/javascript"></script>
 <script th:src="@{/foreground/js/myjs.js}" src="/foreground/js/myjs.js" > </script>
+
+<script>
+    $(document).ready(function () {
+        var entries = [];
+        var settings = {
+            entries: entries,
+            width: '100%',
+            height: '100%',
+            radius: '73%',
+            radiusMin: '50%',
+            bgDraw: true,
+            bgColor: '#FFF',
+            opacityOver: 1.00,
+            opacityOut: 0.13,
+            opacitySpeed: 6,
+            fov: 800,
+            speed: 0.5,
+            fontFamily: 'Oswald, Arial, sans-serif',
+            fontSize: '15',
+            fontColor: '#000',
+            fontWeight: 'normal',//bold
+            fontStyle: 'normal',//italic
+            fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+            fontToUpperCase: false
+
+        };
+
+        //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+        $('#tag-cloud').svg3DTagCloud(settings);
+        parse()
+    });
+</script>
 </body>
 </html>

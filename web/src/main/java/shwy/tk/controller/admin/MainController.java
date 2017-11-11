@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 @Controller
 @RequestMapping("/admin")
-@SessionAttributes(value = {"blogNum", "commentNum"})
+@SessionAttributes(value = {"blogNum","photoNum","imageNum","commentNum"})
 public class MainController {
 
     @Autowired
@@ -35,6 +35,10 @@ public class MainController {
 
     @Autowired
     private BlogService blogService;
+    @Autowired
+    private PhotoService photoService;
+    @Autowired
+    private ImagesService imagesService;
 
     @RequestMapping("/main")
     public ModelAndView goMain() {
@@ -55,6 +59,10 @@ public class MainController {
         Long notReplyNum = blogAdviceService.getNotReplyCount();
         //获取文章总数
         Long blogNum = blogService.getBlogCount(new HashMap<>());
+        //获取相册总数
+        Long photoNum = photoService.getPhotoCount(new HashMap<>());
+        //获取照片总数
+        Long imageNum = imagesService.getImagesCount(new HashMap<>());
 
         mav.addObject("loginHistory", loginHistory);
         mav.addObject("todayReadNum", todayReadNum);
@@ -64,6 +72,9 @@ public class MainController {
         mav.addObject("commentNum", commentNum);
         mav.addObject("notReplyNum", notReplyNum);
         mav.addObject("blogNum", blogNum);
+        mav.addObject("photoNum", photoNum);
+        mav.addObject("imageNum", imageNum);
+
         return mav;
     }
 }

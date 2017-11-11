@@ -74,7 +74,7 @@
                 <li class="layui-nav-item">
                     <a href="javascript:"><i class="fa fa-photo"></i>相册管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:" data-url="/admin/addPhoto" data-id="9">添加相册</a></dd>
+                        <dd><a href="javascript:" data-url="/admin/writePhoto" data-id="9">添加相册</a></dd>
                         <dd><a href="javascript:" data-url="/admin/photoManage" data-id="10">相册信息管理</a></dd>
                     </dl>
                 </li>
@@ -142,29 +142,37 @@
                         <legend>统计信息</legend>
                         <div class="layui-field-box">
                             <div style="display: inline-block; width: 100%;">
-                                <div class="ht-box layui-bg-blue">
+                                <div class="ht-box layui-bg-blue" style="width: 170px">
                                     <p th:text="${todayReadNum}">123</p>
                                     <p>今日访问</p>
                                 </div>
-                                <div class="ht-box layui-bg-red">
+                                <div class="ht-box layui-bg-red" style="width: 170px">
                                     <p th:text="${todayLike}">32</p>
                                     <p>今日点赞</p>
                                 </div>
-                                <div class="ht-box layui-bg-green">
+                                <div class="ht-box layui-bg-green" style="width: 170px">
                                     <p th:text="${readNum}">55</p>
                                     <p>访问总数</p>
                                 </div>
-                                <div class="ht-box layui-bg-orange">
+                                <div class="ht-box layui-bg-orange" style="width: 170px">
                                     <p th:text="${likeNum}">123</p>
                                     <p>点赞总数</p>
                                 </div>
-                                <div class="ht-box layui-bg-cyan">
+                                <div class="ht-box layui-bg-cyan" style="width: 170px">
                                     <p th:text="${commentNum}">321</p>
                                     <p>评论总数</p>
                                 </div>
-                                <div class="ht-box layui-bg-black">
+                                <div class="ht-box layui-bg-black" style="width: 170px">
                                     <p th:text="${session.blogNum}">231</p>
                                     <p>文章总数</p>
+                                </div>
+                                <div class="ht-box layui-bg-red" style="width: 170px">
+                                    <p th:text="${session.photoNum}">231</p>
+                                    <p>相册总数</p>
+                                </div>
+                                <div class="ht-box layui-bg-green" style="width: 170px">
+                                    <p th:text="${session.imageNum}">231</p>
+                                    <p>照片总数</p>
                                 </div>
                             </div>
                         </div>

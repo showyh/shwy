@@ -18,10 +18,30 @@
         </if>
 
     </select>
+    <select id="listAllPhoto" resultType="shwy.tk.pojo.po.PhotoPO" parameterType="Map">
+        select * from photo
+    </select>
 
     <select id="getPhotoCount" resultType="Long" parameterType="Map">
         select count(*) from photo
     </select>
 
+    <select id="getPhoto" resultMap="photoResultMap">
+        select * from photo where id=#{id}
+    </select>
+    <insert id="addPhoto" parameterType="shwy.tk.pojo.po.PhotoPO">
+        insert into photo
+        values(null,#{photoName},#{description},#{coverImage},#{author})
+    </insert>
+
+    <update id="updatePhoto" parameterType="shwy.tk.pojo.po.PhotoPO">
+        update photo set
+        photoName=#{ photoName},description=#{description},coverImage=#{coverImage},author=#{author}
+        where id=#{id}
+    </update>
+
+    <delete id="deletePhoto" parameterType="Integer">
+        delete from photo where id = #{id}
+    </delete>
 
 </mapper>

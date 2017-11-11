@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link th:href="@{/foreground/images/blog.ico}" href="/foreground/images/blog.ico" rel="icon" type="image/x-icon"/>
+    <link th:href="@{/foreground/css/mplayer.css}" href="/foreground/css/mplayer.css" rel="stylesheet">
     <link th:href="@{/foreground/css/bootstrap.min.css}" href="/foreground/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link th:href="@{/foreground/css/imageset.css}" rel="stylesheet" href="/foreground/css/imageset.css" type="text/css"/>
     <link th:href="@{/foreground/css/images.min.css}" rel="stylesheet" href="/foreground/css/images.min.css" type="text/css"/>
@@ -72,11 +73,46 @@
 <div class="mp" th:include="foreground/common::mp"></div><!--音乐结束-->
 
 <script th:src="@{/foreground/js/jquery.min.js}" src="/foreground/js/jquery.min.js"></script>
+<script th:src="@{/foreground/js/mplayer.js}" src="/foreground/js/mplayer.js"></script>
+<script th:src="@{/foreground/js/public.js}" src="/foreground/js/public.js"></script>
+<script th:src="@{/foreground/js/mplayer-functions.js}" src="/foreground/js/mplayer-functions.js"></script>
+<script th:src="@{/foreground/js/jquery.nstSlider.js}" src="/foreground/js/jquery.nstSlider.js"></script>
 <script th:src="@{/foreground/js/images.min.js}" type="text/javascript" src="/foreground/js/images.min.js"></script>
 <script th:src="@{/foreground/js/bootstrap.min.js}" src="/foreground/js/bootstrap.min.js"></script>
 <script th:src="@{/foreground/js/wow.min.js}" src="/foreground/js/wow.min.js"></script>
+<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}" src="/foreground/js/jquery.svg3dtagcloud.min.js"></script>
 <script th:src="@{/foreground/js/jquery.emoji.js}"  src="/foreground/js/jquery.emoji.js" type="text/javascript"></script>
 <script th:src="@{/foreground/js/myjs.js}" src="/foreground/js/myjs.js" > </script>
+<script>
+    $(document).ready(function () {
+        var entries = [];
+        var settings = {
+            entries: entries,
+            width: '100%',
+            height: '100%',
+            radius: '73%',
+            radiusMin: '50%',
+            bgDraw: true,
+            bgColor: '#FFF',
+            opacityOver: 1.00,
+            opacityOut: 0.13,
+            opacitySpeed: 6,
+            fov: 800,
+            speed: 0.5,
+            fontFamily: 'Oswald, Arial, sans-serif',
+            fontSize: '15',
+            fontColor: '#000',
+            fontWeight: 'normal',//bold
+            fontStyle: 'normal',//italic
+            fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+            fontToUpperCase: false
 
+        };
+
+        //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+        $('#tag-cloud').svg3DTagCloud(settings);
+        parse()
+    });
+</script>
 </body>
 </html>

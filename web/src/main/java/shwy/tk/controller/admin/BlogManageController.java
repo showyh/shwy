@@ -45,7 +45,6 @@ public class BlogManageController {
         mav.addObject("blogTypeList", blogTypeList);
         return mav;
     }
-
     @RequestMapping(value = "/blogManage/list/{page}", method = RequestMethod.GET)
     @ResponseBody
     public List<BlogPO> blogManagePage(@PathVariable String page, String pageSize) {
@@ -58,6 +57,7 @@ public class BlogManageController {
         List<BlogPO> blogList = blogService.listBlogPO(param);
         return blogList;
     }
+
 
     @RequestMapping("/writeBlog")
     /* required=false表示不传的话，会给参数赋值为null，@RequestParam注解的参数是int基本类型，
@@ -98,7 +98,7 @@ public class BlogManageController {
     @ResponseBody
     public String uploadImage(@RequestParam(value = "file") MultipartFile file) throws Exception {
         String imageName = DateUtil.getCurrentTimeStr();
-        String filePath = "/shwy/blog/coverImage/" + imageName + "." + file.getOriginalFilename().split("\\.")[1];
+        String filePath = "shwy/blog/coverImage/" + imageName + "." + file.getOriginalFilename().split("\\.")[1];
         Boolean uploadResult = QiNiuUploadUtil.upload(file.getInputStream(), filePath);
         Map<String, String> jsonMap = new HashMap<>();
         if (uploadResult) {

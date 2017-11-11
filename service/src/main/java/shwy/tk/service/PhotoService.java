@@ -13,4 +13,14 @@ public interface PhotoService {
     List<PhotoPO> listPhoto(HashMap<String, Object> param);
 
     Long getPhotoCount(HashMap<String, Object> param);
+
+    int updatePhoto(PhotoPO photoPO);
+
+    int addPhoto(PhotoPO photoPO);
+
+    PhotoPO getPhoto(Integer id);
+
+    int deletePhoto(Integer id);
+
+    List<PhotoPO> listAllPhoto();
 }
