@@ -40,13 +40,13 @@
         <label class="layui-form-label">是否显示</label>
         <div class="layui-input-inline">
             <div th:switch="${musicList}==null? ${false}:${musicList.basic}">
-                <span th:case="${false}">
-                    <input type="radio" name="basic" value=true title="是"  >
-                    <input type="radio" name="basic" value=false title="否" checked >
-                </span>
                 <span th:case="${true}">
                     <input type="radio" name="basic" value=true title="是"  checked>
                     <input type="radio" name="basic" value=false title="否"  >
+                </span>
+                <span th:case="${false}">
+                    <input type="radio" name="basic" value=true title="是"  >
+                    <input type="radio" name="basic" value=false title="否" checked >
                 </span>
             </div>
         </div>
