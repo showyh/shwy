@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 @Controller
 @RequestMapping("/admin")
-@SessionAttributes(value = {"blogNum","photoNum","imageNum","commentNum"})
+@SessionAttributes(value = {"blogNum","photoNum","imageNum","commentNum","musicNum","musicListNum"})
 public class MainController {
 
     @Autowired
@@ -39,6 +39,10 @@ public class MainController {
     private PhotoService photoService;
     @Autowired
     private ImagesService imagesService;
+    @Autowired
+    private MusicService musicService;
+    @Autowired
+    private MusicListService musicListService;
 
     @RequestMapping("/main")
     public ModelAndView goMain() {
@@ -63,6 +67,10 @@ public class MainController {
         Long photoNum = photoService.getPhotoCount(new HashMap<>());
         //获取照片总数
         Long imageNum = imagesService.getImagesCount(new HashMap<>());
+        //获取照片总数
+        Long musicNum = musicService.getMusicCount(new HashMap<>());
+        //获取照片总数
+        Long musicListNum = musicListService.getMusicListCount(new HashMap<>());
 
         mav.addObject("loginHistory", loginHistory);
         mav.addObject("todayReadNum", todayReadNum);
@@ -74,6 +82,8 @@ public class MainController {
         mav.addObject("blogNum", blogNum);
         mav.addObject("photoNum", photoNum);
         mav.addObject("imageNum", imageNum);
+        mav.addObject("musicNum", musicNum);
+        mav.addObject("musicListNum", musicListNum);
 
         return mav;
     }

@@ -2,6 +2,7 @@ package shwy.tk.dao;
 
 import shwy.tk.pojo.po.MusicListPO;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,4 +10,20 @@ import java.util.List;
  */
 public interface MusicListDAO {
     List<MusicListPO> musicListPO();
+
+    MusicListPO getMusicList(int id);
+
+    int addMusicList(MusicListPO musicListPO);
+
+    int updateMusicList(MusicListPO musicListPO);
+
+    int deleteMusicList(Integer id);
+
+    Long getMusicListCount(HashMap<String, Object> param);
+
+    List<MusicListPO> listAllMusicList();
+
+    List<MusicListPO> listMusicList(HashMap<String, Object> param);
+
+
 }

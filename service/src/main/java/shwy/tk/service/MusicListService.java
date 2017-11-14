@@ -2,6 +2,7 @@ package shwy.tk.service;
 
 import shwy.tk.pojo.po.MusicListPO;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,4 +10,18 @@ import java.util.List;
  */
 public interface MusicListService {
     List<MusicListPO> musicListPO();
+
+    int deleteMusicList(Integer id);
+
+    int updateMusicList(MusicListPO musicListPO);
+
+    MusicListPO getMusicList(int id);
+
+    int addMusicList(MusicListPO musicListPO);
+
+    List<MusicListPO> listMusicList(HashMap<String, Object> param);
+
+    List<MusicListPO> listAllMusicList();
+
+    Long getMusicListCount(HashMap<String, Object> param);
 }

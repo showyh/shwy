@@ -9,7 +9,7 @@ $(function(){
 				mplayer_song[data_list] = new Array();
 				mplayer_song[data_list][0] = {
 					"basic":data[0][data_list].basic,
-					"name":data[0][data_list].music_list_name,
+					"name":data[0][data_list].musicListName,
 					"singer":data[0][data_list].singer,
 					"img":data[0][data_list].img
 				};

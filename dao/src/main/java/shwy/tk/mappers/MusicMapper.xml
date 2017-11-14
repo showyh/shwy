@@ -25,4 +25,33 @@
         <include refid="listPO"/>
         from music where dan=#{dan}
     </select>
+
+    <!--<select id="listAllMusic" resultType="musicResultMap" parameterType="Map">
+        select
+        <include refid="listPO"/>
+        from music
+    </select>-->
+
+    <select id="getMusicCount" resultType="Long" parameterType="Map">
+        select count(*) from music
+    </select>
+
+    <select id="getMusic" resultMap="musicResultMap">
+        select * from music where id=#{id}
+    </select>
+   <!-- <insert id="addMusic" parameterType="shwy.tk.pojo.po.MusicPO">
+        insert into music
+        values(null,#{name},#{singer},#{dan},#{src},#{lrc},#{img},#{time})
+    </insert>
+
+    <update id="updateMusic" parameterType="shwy.tk.pojo.po.MusicPO">
+        update music set
+        name=#{name},singer=#{singer},dan=#{dan},src=#{src},lrc=#{lrc},img=#{img},time=#{time}
+        where id=#{id}
+    </update>-->
+
+    <delete id="deletePhoto" parameterType="Integer">
+        delete from photo where id = #{id}
+    </delete>
+
 </mapper>

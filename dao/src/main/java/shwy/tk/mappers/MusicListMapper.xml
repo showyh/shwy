@@ -7,7 +7,7 @@
 
     <resultMap id="musicListResultMap" type="shwy.tk.pojo.po.MusicListPO">
         <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="music_list_name" property="music_list_name" jdbcType="VARCHAR"/>
+        <result column="musicListName" property="musicListName" jdbcType="VARCHAR"/>
         <result column="singer" property="singer" jdbcType="VARCHAR"/>
         <result column="basic" property="basic" jdbcType="INTEGER"/>
         <result column="img" property="img" jdbcType="VARCHAR"/>
@@ -15,12 +15,46 @@
     </resultMap>
 
     <sql id="listPO">
-        music_list_name,img,id,basic,singer
+        musicListName,img,id,basic,singer
     </sql>
 
     <select id="musicListPO" resultMap="musicListResultMap" parameterType="Map">
         select
         <include refid="listPO"/>
-        from music_list
+        from musicList
+    </select>
+    <select id="getMusicList" resultMap="musicListResultMap">
+        select * from musicList where id=#{id}
+    </select>
+
+    <insert id="addMusicList" parameterType="shwy.tk.pojo.po.MusicListPO">
+        insert into musicList
+        values(null,#{musicListName},#{basic},#{img},#{singer})
+    </insert>
+
+    <update id="updateMusicList" parameterType="shwy.tk.pojo.po.MusicListPO">
+        update musicList set
+       musicListName=#{musicListName},basic=#{basic},img=#{img},singer=#{singer}
+        where id=#{id}
+    </update>
+
+    <delete id="deleteMusicList" parameterType="Integer">
+        delete from musicList where id = #{id}
+    </delete>
+
+    <select id="getMusicListCount" resultType="Long" parameterType="Map">
+        select count(*) from musicList
+    </select>
+
+    <select id="listAllMusicList" resultType="shwy.tk.pojo.po.MusicListPO" parameterType="Map">
+        select * from musicList
+    </select>
+
+    <select id="listMusicList" resultType="shwy.tk.pojo.po.MusicListPO" parameterType="Map">
+        select * from musicList order by id
+        <if test="start!=null and pageSize!=null">
+            limit #{start},#{pageSize}
+        </if>
+
     </select>
 </mapper>

@@ -7,13 +7,13 @@
 
     <resultMap id="imagesResultMap" type="shwy.tk.pojo.po.ImagesPO">
         <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="imageName" property="imagesName" jdbcType="VARCHAR"/>
+        <result column="imageName" property="imageName" jdbcType="VARCHAR"/>
         <result column="imageUrl" property="imageUrl" jdbcType="VARCHAR"/>
         <result column="photoId" property="photoId" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="listVO">
-        id,imageName,imageUrl
+        id,imageName,imageUrl,photoName
     </sql>
 
     <select id="listImages" resultType="shwy.tk.pojo.vo.ImagesVO" parameterType="Map">
@@ -30,6 +30,20 @@
 
     </select>
 
+    <select id="listImagesPO" resultMap="imagesResultMap" parameterType="Map">
+        select * from images
+        <where>
+            <if test="photoId!=null">
+                and photoId=#{photoId}
+            </if>
+        </where>
+        order by id DESC
+        <if test="start!=null and pageSize!=null">
+            limit #{start},#{pageSize}
+        </if>
+
+    </select>
+
     <select id="getImagesCount" resultType="Long" parameterType="Map">
         select count(*) from images
         <where>
@@ -40,5 +54,22 @@
         </where>
     </select>
 
+    <select id="getImage" resultMap="imagesResultMap">
+        select * from images where id=#{id}
+    </select>
+    <insert id="addImage" parameterType="shwy.tk.pojo.po.ImagesPO">
+        insert into images
+        values(null,#{imageName},#{imageUrl},#{photoId})
+    </insert>
+
+    <update id="updateImage" parameterType="shwy.tk.pojo.po.ImagesPO">
+        update images set
+        imageName=#{imageName},imageUrl=#{imageUrl},photoId=#{photoId}
+        where id=#{id}
+    </update>
+
+    <delete id="deleteImage" parameterType="Integer">
+        delete from images where id = #{id}
+    </delete>
 
 </mapper> 

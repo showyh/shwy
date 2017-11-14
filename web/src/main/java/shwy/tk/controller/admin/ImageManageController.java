@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import shwy.tk.pojo.bo.PageBeanBO;
+import shwy.tk.pojo.po.ImagesPO;
 import shwy.tk.pojo.po.PhotoPO;
+import shwy.tk.service.ImagesService;
 import shwy.tk.service.PhotoService;
 import shwy.tk.utils.*;
 
@@ -19,68 +21,73 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/admin")
-public class PhotoManageController {
+public class ImageManageController {
+    @Autowired
+    private ImagesService imagesService;
     @Autowired
     private PhotoService photoService;
 
-    @RequestMapping("/photoManage")
-    public ModelAndView photoManage() {
-        ModelAndView mav = new ModelAndView("background/photoManage");
+    @RequestMapping("/imageManage")
+    public ModelAndView imageManage() {
+        ModelAndView mav = new ModelAndView("background/imageManage");
         List<PhotoPO> photoList = photoService.listAllPhoto();
         mav.addObject("photoList",photoList);
         return mav;
     }
-    @RequestMapping(value = "/photoManage/list/{page}", method = RequestMethod.GET)
+    @RequestMapping(value = "/imageManage/list/{page}", method = RequestMethod.GET)
     @ResponseBody
-    public List<PhotoPO> photoManagePage(@PathVariable String page, String pageSize) {
-        //获取博文列表
+    public List<ImagesPO> imageManagePage(@PathVariable String page, String pageSize) {
+        //获取照片列表
         PageBeanBO pageBeanBO = new PageBeanBO(Integer.parseInt(page), Integer.parseInt(pageSize));
         HashMap<String, Object> param = new HashMap<>();
         param.put("start", pageBeanBO.getStart());
         param.put("pageSize", pageBeanBO.getPageSize());
 
-        List<PhotoPO> photoList = photoService.listPhoto(param);
-        return photoList;
+        List<ImagesPO> imageList = imagesService.listImagesPO(param);
+        return imageList;
 
     }
 
 
-    @RequestMapping("/writePhoto")
-    public ModelAndView addPhoto(@RequestParam(required = false) String id) {
-        ModelAndView mav = new ModelAndView("background/writePhoto");
+    @RequestMapping("/writeImage")
+    public ModelAndView addImage(@RequestParam(required = false) String id) {
+        ModelAndView mav = new ModelAndView("background/writeImage");
         if (StringUtil.isNotEmpty(id)) {
-            PhotoPO photoPO = photoService.getPhoto(Integer.parseInt(id));
-            mav.addObject("photo", photoPO);
+            ImagesPO imagesPO = imagesService.getImage(Integer.parseInt(id));
+             mav.addObject("image", imagesPO);
+
         }
+        List<PhotoPO> listPhoto=photoService.listPhoto(new HashMap<>());
+        mav.addObject("listPhoto", listPhoto);
         return mav;
     }
 
 
-    @RequestMapping("/addPhoto")
-    public String addPhoto(PhotoPO photoPO) throws Exception {
+    @RequestMapping("/addImage")
+    public String addImage(ImagesPO imagesPO) throws Exception {
         int result = 0;
-        if (photoPO.getId() != null) {
-            result = photoService.updatePhoto(photoPO);
+        if (imagesPO.getId() != null) {
+            result = imagesService.updateImage(imagesPO);
         } else {
-            result = photoService.addPhoto(photoPO);
+            result = imagesService.addImage(imagesPO);
         }
         if (result > 0) {
-            return "redirect:/admin/photoManage";
+            return "redirect:/admin/imageManage";
         } else {
             return null;
         }
     }
 
-    @RequestMapping("/uploadPhotoImage")
+    @RequestMapping("/uploadImages")
     @ResponseBody
-    public String uploadPhotoImage(@RequestParam(value = "file") MultipartFile file) throws Exception {
+    public String uploadImages(@RequestParam(value = "file") MultipartFile file) throws Exception {
         String imageName = DateUtil.getCurrentTimeStr();
-        String filePath = "shwy/photo/coverImage/" + imageName + "." + file.getOriginalFilename().split("\\.")[1];
+        String filePath = "shwy/image/" + imageName + "." + file.getOriginalFilename().split("\\.")[1];
         Boolean uploadResult = QiNiuUploadUtil.upload(file.getInputStream(), filePath);
         Map<String, String> jsonMap = new HashMap<>();
         if (uploadResult) {
-            String coverImage = ConfigStrUtil.QINIU_URL + filePath;
-            jsonMap.put("coverImage", coverImage);
+            String imageUrl = ConfigStrUtil.QINIU_URL + filePath;
+            jsonMap.put("imageUrl", imageUrl);
             jsonMap.put("success", "true");
             return JacksonUtil.toJSon(jsonMap);
         } else {
@@ -89,10 +96,10 @@ public class PhotoManageController {
         }
     }
 
-    @RequestMapping(value = "/photo/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/image/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public String deletePhoto(@PathVariable Integer id) {
-        int result = photoService.deletePhoto(id);
+    public String deleteImage(@PathVariable Integer id) {
+        int result = imagesService.deleteImage(id);
         if (result > 0) {
             return ConfigStrUtil.SUCCESS;
         } else {

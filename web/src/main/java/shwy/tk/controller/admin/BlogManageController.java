@@ -94,9 +94,9 @@ public class BlogManageController {
         }
     }
 
-    @RequestMapping("/uploadImage")
+    @RequestMapping("/uploadBlogImage")
     @ResponseBody
-    public String uploadImage(@RequestParam(value = "file") MultipartFile file) throws Exception {
+    public String uploadBlogImage(@RequestParam(value = "file") MultipartFile file) throws Exception {
         String imageName = DateUtil.getCurrentTimeStr();
         String filePath = "shwy/blog/coverImage/" + imageName + "." + file.getOriginalFilename().split("\\.")[1];
         Boolean uploadResult = QiNiuUploadUtil.upload(file.getInputStream(), filePath);

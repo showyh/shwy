@@ -119,7 +119,7 @@
             return true;
         });
         layui.upload({
-            url: '/admin/uploadImage' //上传接口
+            url: '/admin/uploadBlogImage' //上传接口
             ,success: function(result){ //上传成功后的回调
                 if(result.success=='true'){
                     document.getElementById("coverImageName").value=result.coverImageName;

@@ -6,10 +6,17 @@ package shwy.tk.pojo.po;
 public class MusicListPO {
     private Integer id;
     private boolean basic;
-    private String music_list_name;
+    private String musicListName;
     private String img;
     private String singer;
 
+    public String getMusicListName() {
+        return musicListName;
+    }
+
+    public void setMusicListName(String musicListName) {
+        this.musicListName = musicListName;
+    }
     public Integer getId() {
         return id;
     }
@@ -26,13 +33,6 @@ public class MusicListPO {
         this.basic = basic;
     }
 
-    public String getMusic_list_name() {
-        return music_list_name;
-    }
-
-    public void setMusic_list_name(String music_list_name) {
-        this.music_list_name = music_list_name;
-    }
 
     public String getImg() {
         return img;

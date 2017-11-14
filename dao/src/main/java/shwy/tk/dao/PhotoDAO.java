@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface PhotoDAO {
     List<PhotoPO> listPhoto(HashMap<String, Object> param);
+
     Long getPhotoCount(HashMap<String, Object> param);
 
     int updatePhoto(PhotoPO photoPO);

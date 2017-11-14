@@ -32,7 +32,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">添加封面</label>
         <div class="layui-input-inline">
-            <input type="file" name="file" class="layui-upload-file" lay-title="添加一个碉堡的封面">
+            <input type="file" name="file" class="layui-upload-file" lay-title="添加相册封面">
             <input type="hidden" name="coverImage" id="coverImage" lay-verify="required"  th:value="${photo}==null?'':${photo.coverImage}">
         </div>
     </div>
