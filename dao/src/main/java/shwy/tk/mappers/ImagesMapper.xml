@@ -10,6 +10,8 @@
         <result column="imageName" property="imageName" jdbcType="VARCHAR"/>
         <result column="imageUrl" property="imageUrl" jdbcType="VARCHAR"/>
         <result column="photoId" property="photoId" jdbcType="INTEGER"/>
+        <association column="photoId" property="photoPO"
+                     select="shwy.tk.dao.PhotoDAO.getPhoto"></association>
     </resultMap>
 
     <sql id="listVO">

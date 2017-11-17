@@ -75,7 +75,7 @@
                     </div>
                     <label class="layui-form-label">相册名称</label>
                     <div class="layui-input-inline">
-                        <select name="photo">
+                        <select name="photoId">
                             <option value="0"></option>
                             <option value="1" th:each="photo:${photoList}" th:value="${photo.id}"
                                     th:text="${photo.photoName}">相册名

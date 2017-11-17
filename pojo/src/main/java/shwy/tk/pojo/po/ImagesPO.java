@@ -8,6 +8,7 @@ public class ImagesPO {
     private String imageName;
     private String imageUrl;
     private Integer photoId;
+    private PhotoPO photoPO;
 
     public Integer getId() {
         return id;
@@ -39,5 +40,13 @@ public class ImagesPO {
 
     public void setPhotoId(Integer photoId) {
         this.photoId = photoId;
+    }
+
+    public PhotoPO getPhotoPO() {
+        return photoPO;
+    }
+
+    public void setPhotoPO(PhotoPO photoPO) {
+        this.photoPO = photoPO;
     }
 }

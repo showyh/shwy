@@ -30,6 +30,7 @@
             <option value="1"  th:each="photo:${listPhoto}" th:selected="${image}==null?false:(${image.photoId}==${photo.id}?true:false)" th:value="${photo.id}" th:text="${photo.photoName}">相册名</option>
         </select>
     </div>
+
     <div class="layui-form-item">
         <label class="layui-form-label">添加照片</label>
         <div class="layui-input-inline">
