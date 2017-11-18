@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import shwy.tk.pojo.po.MusicListPO;
-import shwy.tk.pojo.po.MusicPO;
+import shwy.tk.pojo.vo.MusicVO;
 import shwy.tk.service.MusicListService;
 import shwy.tk.service.MusicService;
 
@@ -31,8 +31,8 @@ public class PlayerController {
           for(int i=0;i<musicListPO.size();i++){
               MusicListPO musicList=musicListPO.get(i);
               int dan=musicList.getId();
-              List<MusicPO> musicPO=musicService.musicPO(dan);
-              listPlayerPO.add(musicPO);
+              List<MusicVO> musicVO=musicService.musicVO(dan);
+              listPlayerPO.add(musicVO);
           }
             return listPlayerPO;
     }

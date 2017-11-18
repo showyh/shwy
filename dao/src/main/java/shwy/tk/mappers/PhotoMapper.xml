@@ -12,7 +12,7 @@
         <result column="author" property="author" jdbcType="VARCHAR"/>
     </resultMap>
     <select id="listPhoto" resultType="shwy.tk.pojo.po.PhotoPO" parameterType="Map">
-        select * from photo order by id
+        select * from photo order by id DESC
         <if test="start!=null and pageSize!=null">
             limit #{start},#{pageSize}
         </if>

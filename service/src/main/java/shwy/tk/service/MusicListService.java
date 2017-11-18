@@ -11,13 +11,14 @@ import java.util.List;
 public interface MusicListService {
     List<MusicListPO> musicListPO();
 
-    int deleteMusicList(Integer id);
-
-    int updateMusicList(MusicListPO musicListPO);
 
     MusicListPO getMusicList(int id);
 
     int addMusicList(MusicListPO musicListPO);
+
+    int deleteMusicList(Integer id);
+
+    int updateMusicList(MusicListPO musicListPO);
 
     List<MusicListPO> listMusicList(HashMap<String, Object> param);
 

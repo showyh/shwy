@@ -13,24 +13,40 @@
         <result column="img" property="img" jdbcType="VARCHAR"/>
         <result column="lrc" property="lrc" jdbcType="VARCHAR"/>
         <result column="time" property="time" jdbcType="VARCHAR"/>
-
+        <result column="dan" property="dan" jdbcType="INTEGER"/>
+        <association column="dan" property="musicListPO"
+                     select="shwy.tk.dao.MusicListDAO.getMusicList"></association>
     </resultMap>
 
-    <sql id="listPO">
+    <sql id="listVO">
          dan,img,singer,src,name,id,time,lrc
     </sql>
 
-    <select id="musicPO" resultMap="musicResultMap" parameterType="Map">
+    <select id="musicVO" resultType="shwy.tk.pojo.vo.MusicVO" parameterType="Map">
         select
-        <include refid="listPO"/>
+        <include refid="listVO"/>
         from music where dan=#{dan}
     </select>
 
-    <!--<select id="listAllMusic" resultType="musicResultMap" parameterType="Map">
+    <select id="listAllMusic" resultType="shwy.tk.pojo.vo.MusicVO" parameterType="Map">
         select
-        <include refid="listPO"/>
+        <include refid="listVO"/>
         from music
-    </select>-->
+    </select>
+
+    <select id="listMusic" resultMap="musicResultMap" parameterType="Map">
+        select * from music
+        <where>
+            <if test="dan!=null">
+                and dan=#{dan}
+            </if>
+        </where>
+        order by id DESC
+        <if test="start!=null and pageSize!=null">
+            limit #{start},#{pageSize}
+        </if>
+
+    </select>
 
     <select id="getMusicCount" resultType="Long" parameterType="Map">
         select count(*) from music
@@ -39,7 +55,7 @@
     <select id="getMusic" resultMap="musicResultMap">
         select * from music where id=#{id}
     </select>
-   <!-- <insert id="addMusic" parameterType="shwy.tk.pojo.po.MusicPO">
+    <insert id="addMusic" parameterType="shwy.tk.pojo.po.MusicPO">
         insert into music
         values(null,#{name},#{singer},#{dan},#{src},#{lrc},#{img},#{time})
     </insert>
@@ -48,7 +64,7 @@
         update music set
         name=#{name},singer=#{singer},dan=#{dan},src=#{src},lrc=#{lrc},img=#{img},time=#{time}
         where id=#{id}
-    </update>-->
+    </update>
 
     <delete id="deletePhoto" parameterType="Integer">
         delete from photo where id = #{id}

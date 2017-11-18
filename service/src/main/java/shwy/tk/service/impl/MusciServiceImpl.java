@@ -3,8 +3,8 @@ package shwy.tk.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import shwy.tk.dao.MusicDAO;
-import shwy.tk.pojo.po.MusicListPO;
 import shwy.tk.pojo.po.MusicPO;
+import shwy.tk.pojo.vo.MusicVO;
 import shwy.tk.service.MusicService;
 
 import java.util.HashMap;
@@ -20,13 +20,8 @@ public class MusciServiceImpl implements MusicService {
     private MusicDAO musicDAO;
 
     @Override
-    public List<MusicPO> musicPO(int dan) {
-        return musicDAO.musicPO(dan);
-    }
-
-    @Override
-    public List<MusicListPO> listMusicList() {
-        return null;
+    public List<MusicVO> musicVO(int dan) {
+        return musicDAO.musicVO(dan);
     }
 
     @Override

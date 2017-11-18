@@ -25,7 +25,7 @@
                 success: function (photoList) {
                     var html = '';
                     html += '<table style="table-layout: fixed" class="layui-table" lay-even>';
-                    html += '<colgroup><col width="40"><col width="150"><col width="180"><col width="120"><col width="90"><col width="90"><col width="40"><col width="40"></colgroup>';
+                    html += '<colgroup><col width="40"><col width="100"><col width="75"><col width="120"><col width="90"><col width="40"><col width="40"></colgroup>';
                     html += '<thead><tr><th>编号</th><th>相册名称</th><th>相册封面</th><th>相册描述</th><th>上传者</th><th colspan="2">操作</th></tr></thead>';
                     html += '<tbody>';
                     for (var i in photoList) {
@@ -33,7 +33,7 @@
                         html += '<tr>';
                         html += '<td>' + item.id + '</td>';
                         html += '<td>' + item.photoName + '</td>';
-                        html += '<td>'+'<img src="'+ item.coverImage +'" width="370px"/>'+ '</td>';
+                        html += '<td>'+'<img src="'+ item.coverImage +'" width="222px"/>'+ '</td>';
                         html += '<td>' + item.description + '</td>';
                         html += '<td>' + item.author + '</td>';
                         html += '<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick="layui.datalist.editData(' + item.id + ')"><i class="layui-icon">&#xe642;</i></button></td>';

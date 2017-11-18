@@ -1,9 +1,10 @@
-package shwy.tk.pojo.po;
+package shwy.tk.pojo.vo;
 
 /**
- * Created by shwy on 2017/10/31.
+ * Created by shwy on 2017/11/17.
  */
-public class MusicPO {
+public class MusicVO {
+
     private Integer id;
     private String name;
     private String singer;
@@ -12,15 +13,6 @@ public class MusicPO {
     private String time;
     private String lrc;
     private Integer dan;
-    private MusicListPO musicListPO;
-
-    public MusicListPO getMusicListPO() {
-        return musicListPO;
-    }
-
-    public void setMusicListPO(MusicListPO musicListPO) {
-        this.musicListPO = musicListPO;
-    }
 
     public Integer getId() {
         return id;

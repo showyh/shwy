@@ -51,7 +51,7 @@
     </select>
 
     <select id="listMusicList" resultType="shwy.tk.pojo.po.MusicListPO" parameterType="Map">
-        select * from musicList order by id
+        select * from musicList order by id DESC
         <if test="start!=null and pageSize!=null">
             limit #{start},#{pageSize}
         </if>

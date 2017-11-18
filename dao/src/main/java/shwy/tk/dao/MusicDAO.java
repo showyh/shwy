@@ -1,6 +1,7 @@
 package shwy.tk.dao;
 
 import shwy.tk.pojo.po.MusicPO;
+import shwy.tk.pojo.vo.MusicVO;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
  */
 public interface MusicDAO {
 
-    List<MusicPO> musicPO(int dan);
+    List<MusicVO> musicVO(int dan);
 
     Long getMusicCount(HashMap<String, Object> param);
 
