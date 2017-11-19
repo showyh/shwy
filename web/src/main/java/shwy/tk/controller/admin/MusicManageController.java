@@ -89,7 +89,7 @@ public class MusicManageController {
         Map<String, String> jsonMap = new HashMap<>();
         if (uploadResult) {
             String musicImage = ConfigStrUtil.QINIU_URL + filePath;
-            jsonMap.put("musicImage", musicImage);
+            jsonMap.put("img", musicImage);
             jsonMap.put("success", "true");
             return JacksonUtil.toJSon(jsonMap);
         } else {
@@ -101,12 +101,12 @@ public class MusicManageController {
     @ResponseBody
     public String uploadMusic(@RequestParam(value = "file") MultipartFile file) throws Exception {
         String musicName = DateUtil.getCurrentTimeStr();
-        String filePath = "shwy/music/musicName" + musicName + "." + file.getOriginalFilename().split("\\.")[1];
+        String filePath = "shwy/music/musicName/" + musicName + "." + file.getOriginalFilename().split("\\.")[1];
         Boolean uploadResult = QiNiuUploadUtil.upload(file.getInputStream(), filePath);
         Map<String, String> jsonMap = new HashMap<>();
         if (uploadResult) {
             String Music = ConfigStrUtil.QINIU_URL + filePath;
-            jsonMap.put("Music", Music);
+            jsonMap.put("src", Music);
             jsonMap.put("success", "true");
             return JacksonUtil.toJSon(jsonMap);
         } else {

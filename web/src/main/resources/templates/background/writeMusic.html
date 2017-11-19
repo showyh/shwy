@@ -29,19 +29,17 @@
         <input type="text" name="singer" lay-verify="required" autocomplete="off"  placeholder="请输入歌手名称" class="layui-input" th:value="${music}==null?'':${music.singer}">
     </div>
     </div>
-
     <div class="layui-form-item">
         <label class="layui-form-label">时间</label>
         <div class="layui-input-inline">
             <input type="text" name="time" lay-verify="required" autocomplete="off" placeholder="4:68" class="layui-input" th:value="${music}==null?'':${music.time}">
         </div>
     </div>
-
     <div class="layui-form-item">
         <label class="layui-form-label">添加封面</label>
         <div class="layui-input-inline">
             <input type="file" name="file" class="layui-upload-file" lay-title="添加一个歌曲封面">
-            <input type="hidden" name="img" id="img" lay-verify="required"  th:value="${music}==null?'':${music.img}">
+            <input type="hidden" name="img" id="img"   th:value="${music}==null?'':${music.img}">
         </div>
     </div>
     <div class="layui-form-item">
@@ -86,25 +84,27 @@
             url: '/admin/uploadMusicImage' //上传接口
             ,success: function(result){ //上传成功后的回调
                 if(result.success=='true'){
-                    document.getElementById("musicImage").value=result.musicImage;
+                    document.getElementById("img").value=result.img;
                 }else{
                     alert("上传文件失败");
                 }
             }
+
         });
     });
-
     layui.define(['form','upload',], function(){
         var $ = layui.jquery;
         layui.upload({
+
             url: '/admin/uploadMusic' //上传接口
             ,success: function(result){ //上传成功后的回调
                 if(result.success=='true'){
-                    document.getElementById("Music").value=result.Music;
+                    document.getElementById("src").value=result.src;
                 }else{
                     alert("上传文件失败");
                 }
             }
+
         });
     });
 </script>

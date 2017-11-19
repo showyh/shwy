@@ -66,8 +66,8 @@
         where id=#{id}
     </update>
 
-    <delete id="deletePhoto" parameterType="Integer">
-        delete from photo where id = #{id}
+    <delete id="deleteMusic" parameterType="Integer">
+        delete from music where id = #{id}
     </delete>
 
 </mapper>
