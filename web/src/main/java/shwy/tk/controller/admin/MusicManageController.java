@@ -82,7 +82,7 @@ public class MusicManageController {
 
     @RequestMapping("/uploadMusicImage")
     @ResponseBody
-    public String uploadMusicImage(@RequestParam(value = "file") MultipartFile file) throws Exception {
+    public String uploadMusicImage(@RequestParam(value = "file1") MultipartFile file) throws Exception {
         String imageName = DateUtil.getCurrentTimeStr();
         String filePath = "shwy/music/musicImage/" + imageName + "." + file.getOriginalFilename().split("\\.")[1];
         Boolean uploadResult = QiNiuUploadUtil.upload(file.getInputStream(), filePath);
