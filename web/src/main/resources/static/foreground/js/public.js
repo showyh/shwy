@@ -20,7 +20,7 @@ $(function(){
 						"src":data[data_list+1][data_i].src,
 						"lrc":data[data_list+1][data_i].lrc,
 						"time":data[data_list+1][data_i].time,
-						"img":data[data_list+1][data_i].img
+						"img":data[data_list+1][data_i].musicImg
 					};
 				}
 			}

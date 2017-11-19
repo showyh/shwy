@@ -35,9 +35,9 @@
                         html += '<td>' + item.name + '</td>';
                         html += '<td>' + item.singer + '</td>';
                         html += '<td>' + item.musicListPO.musicListName + '</td>';
-                        html += '<td>' + item.src + '</td>';
+                        html += '<td>'+'<audio src="'+ item.src +'" controls="controls"/>'+ '</td>';
                         html += '<td>' + item.lrc + '</td>';
-                        html += '<td>'+'<img src="'+ item.img +'" width="75px"/>'+ '</td>';
+                        html += '<td>'+'<img src="'+ item.musicImg +'" width="75px"/>'+ '</td>';
                         html += '<td>' + item.time + '</td>';
                         html += '<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick="layui.datalist.editData(' + item.id + ')"><i class="layui-icon">&#xe642;</i></button></td>';
                         html += '<td><button class="layui-btn layui-btn-small layui-btn-danger" onclick="layui.datalist.deleteData(' + item.id + ')"><i class="layui-icon">&#xe640;</i></button></td>';

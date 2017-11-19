@@ -8,7 +8,7 @@ public class MusicPO {
     private String name;
     private String singer;
     private String src;
-    private String img;
+    private String musicImg;
     private String time;
     private String lrc;
     private Integer dan;
@@ -54,12 +54,12 @@ public class MusicPO {
         this.src = src;
     }
 
-    public String getImg() {
-        return img;
+    public String getMusicImg() {
+        return musicImg;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setMusicImg(String musicImg) {
+        this.musicImg = musicImg;
     }
 
     public String getTime() {

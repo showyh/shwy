@@ -36,13 +36,6 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">添加封面</label>
-        <div class="layui-input-inline">
-            <input type="file" name="file" class="layui-upload-file" lay-title="添加一个歌曲封面">
-            <input type="hidden" name="img" id="img"   th:value="${music}==null?'':${music.img}">
-        </div>
-    </div>
-    <div class="layui-form-item">
         <label class="layui-form-label">所属歌单</label>
         <div class="layui-input-inline">
             <select lay-verify="required" name="dan" >
@@ -52,10 +45,17 @@
         </div>
     </div>
     <div class="layui-form-item">
+        <label class="layui-form-label">添加封面</label>
+        <div class="layui-input-inline">
+            <input type="file" name="file" class="layui-upload-file1" lay-title="添加一个歌曲封面">
+            <input type="hidden" name="musicImg" id="musicImg"  lay-verify="required" th:value="${music}==null?'':${music.musicImg}">
+        </div>
+    </div>
+    <div class="layui-form-item">
         <label class="layui-form-label">歌曲地址</label>
         <div class="layui-input-inline">
-            <input type="file" name="file" class="layui-upload-file" lay-title="添加歌曲地址">
-            <input type="hidden" name="src" id="src" lay-verify="required"  th:value="${music}==null?'':${music.src}">
+            <input type="file" name="file2" lay-type="audio" class="layui-upload-file2" lay-title="添加歌曲地址">
+            <input type="hidden" name="src" id="src"   th:value="${music}==null?'':${music.src}">
         </div>
     </div>
 
@@ -82,23 +82,28 @@
         var $ = layui.jquery;
         layui.upload({
             url: '/admin/uploadMusicImage' //上传接口
+            ,elem: '.layui-upload-file1'
             ,success: function(result){ //上传成功后的回调
                 if(result.success=='true'){
-                    document.getElementById("img").value=result.img;
-                }else{
-                    alert("上传文件失败");
-                }
-            },
-            url: '/admin/uploadMusic' //上传接口
-            ,success: function(result){ //上传成功后的回调
-                if(result.success=='true'){
-                    document.getElementById("src").value=result.src;
+                    document.getElementById("musicImg").value=result.musicImg;
                 }else{
                     alert("上传文件失败");
                 }
             }
-
         });
+        layui.upload({
+            url: '/admin/uploadMusic' //上传接口
+            ,elem: '.layui-upload-file2'
+            ,accept:'audio'
+            ,exts:'mp3'
+            ,success: function(result){ //上传成功后的回调
+            if(result.success=='true'){
+                document.getElementById("src").value=result.src;
+            }else{
+                alert("上传文件失败");
+            }
+        }
+       });
     });
 </script>
 </body>
