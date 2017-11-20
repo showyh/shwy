@@ -82,10 +82,10 @@ public class MusicManageController {
 
     @RequestMapping("/uploadMusicImage")
     @ResponseBody
-    public String uploadMusicImage(@RequestParam(value = "file1") MultipartFile file) throws Exception {
+    public String uploadMusicImage(@RequestParam(value = "file1") MultipartFile file1) throws Exception {
         String imageName = DateUtil.getCurrentTimeStr();
-        String filePath = "shwy/music/musicImage/" + imageName + "." + file.getOriginalFilename().split("\\.")[1];
-        Boolean uploadResult = QiNiuUploadUtil.upload(file.getInputStream(), filePath);
+        String filePath = "shwy/music/musicImage/" + imageName + "." + file1.getOriginalFilename().split("\\.")[1];
+        Boolean uploadResult = QiNiuUploadUtil.upload(file1.getInputStream(), filePath);
         Map<String, String> jsonMap = new HashMap<>();
         if (uploadResult) {
             String musicImage = ConfigStrUtil.QINIU_URL + filePath;
@@ -99,10 +99,10 @@ public class MusicManageController {
     }
     @RequestMapping("/uploadMusic")
     @ResponseBody
-    public String uploadMusic(@RequestParam(value = "file2") MultipartFile file) throws Exception {
+    public String uploadMusic(@RequestParam(value = "file2") MultipartFile file2) throws Exception {
         String musicName = DateUtil.getCurrentTimeStr();
-        String filePath = "shwy/music/musicName/" + musicName + "." + file.getOriginalFilename().split("\\.")[1];
-        Boolean uploadResult = QiNiuUploadUtil.upload(file.getInputStream(), filePath);
+        String filePath = "shwy/music/musicName/" + musicName + "." + file2.getOriginalFilename().split("\\.")[1];
+        Boolean uploadResult = QiNiuUploadUtil.upload(file2.getInputStream(), filePath);
         Map<String, String> jsonMap = new HashMap<>();
         if (uploadResult) {
             String Music = ConfigStrUtil.QINIU_URL + filePath;
