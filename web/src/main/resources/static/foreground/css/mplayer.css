@@ -360,7 +360,7 @@
   left: 0;
   width: 574px;
   height: 0;
-  overflow: hidden;
+  overflow: auto;
   background-color: #212121;
   -webkit-transition: height .5s;
   -moz-transition: height .5s;
@@ -379,6 +379,7 @@
   line-height: 40px;
   width: 100%;
   background: #212121;
+  overflow: auto;
 }
 /* line 332, mplayer.less */
 .mp .mp-list-title li {
