@@ -69,4 +69,15 @@ public class TimeLineServiceImpl implements TimeLineService {
         return moodDAO.addMood(moodPO);
 
     }
+
+    @Override
+    public int deleteMood(Integer id) {
+        return moodDAO.deleteMood(id);
+    }
+
+    @Override
+    public MoodPO getMood(Integer id) {
+        return moodDAO.getMood(id);
+    }
+
 }

@@ -68,7 +68,7 @@
                 content=#{content},
             </if>
             <if test="pictureUrl!=null and pictureUrl!=''">
-                content=#{content},
+                pictureUrl=#{pictureUrl},
             </if>
             <if test="is_show!=null">
                 is_show=#{is_show},
@@ -78,7 +78,14 @@
     </update>
 
     <insert id="addMood" parameterType="shwy.tk.pojo.po.MoodPO">
-        insert into mood values(null,#{title},#{content},#{publishTime},#{pictureUrl},#{is_show})
+        insert into mood values(null,#{title},#{content},#{publishTime},#{is_show},#{pictureUrl})
     </insert>
+
+    <select id="getMood" resultMap="moodResultMap">
+        select * from mood where id=#{id}
+    </select>
+    <delete id="deleteMood" parameterType="Integer">
+        delete from mood where id = #{id}
+    </delete>
 
 </mapper>

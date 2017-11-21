@@ -21,4 +21,7 @@ public interface TimeLineService {
 
     int addMood(MoodPO moodPO);
 
+    int deleteMood(Integer id);
+
+    MoodPO getMood(Integer id);
 }
