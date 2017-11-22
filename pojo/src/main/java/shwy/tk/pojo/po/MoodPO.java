@@ -12,6 +12,7 @@ public class MoodPO {
     private String title;
     private String pictureUrl;
     private String content;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date publishTime;
     private Boolean is_show;
 
@@ -23,8 +24,6 @@ public class MoodPO {
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
     }
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
 
     public Integer getId() {
         return id;

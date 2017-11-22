@@ -2,7 +2,9 @@ package shwy.tk.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import shwy.tk.dao.ImagesDAO;
 import shwy.tk.dao.PhotoDAO;
+import shwy.tk.pojo.po.ImagesPO;
 import shwy.tk.pojo.po.PhotoPO;
 import shwy.tk.service.PhotoService;
 
@@ -16,6 +18,8 @@ import java.util.List;
 public class PhotoServiceImpl implements PhotoService{
     @Autowired
     private PhotoDAO photoDAO;
+    @Autowired
+    private ImagesDAO imagesDAO;
     @Override
     public List<PhotoPO> listPhoto(HashMap<String, Object> param) {
         List<PhotoPO> photoPOList = photoDAO.listPhoto(param);
@@ -45,6 +49,12 @@ public class PhotoServiceImpl implements PhotoService{
 
     @Override
     public int deletePhoto(Integer id) {
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("photoId", id.toString());
+        List<ImagesPO> imagesList = imagesDAO.listImagesPO(param);
+        if (imagesList.size() > 0) {
+            return 0;
+        }
         return photoDAO.deletePhoto(id);
     }
 
