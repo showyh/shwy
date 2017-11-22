@@ -2,8 +2,10 @@ package shwy.tk.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import shwy.tk.dao.MusicDAO;
 import shwy.tk.dao.MusicListDAO;
 import shwy.tk.pojo.po.MusicListPO;
+import shwy.tk.pojo.po.MusicPO;
 import shwy.tk.service.MusicListService;
 
 import java.util.HashMap;
@@ -16,6 +18,8 @@ import java.util.List;
 public class MusicListServiceImpl implements MusicListService {
     @Autowired
     private MusicListDAO musicListDAO;
+    @Autowired
+    private MusicDAO musicDAO;
 
     @Override
     public List<MusicListPO> musicListPO() {
@@ -24,6 +28,14 @@ public class MusicListServiceImpl implements MusicListService {
 
     @Override
     public int deleteMusicList(Integer id) {
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("dan", id);
+        List<MusicPO> musicList = musicDAO.listMusic(param);
+        if (musicList.size() > 0) {
+            for (MusicPO musicPO : musicList) {
+                musicDAO.deleteMusic(musicPO.getId());
+            }
+        }
         return musicListDAO.deleteMusicList(id);
     }
 

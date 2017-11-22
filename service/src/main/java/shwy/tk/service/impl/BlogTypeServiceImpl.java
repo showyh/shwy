@@ -39,7 +39,9 @@ public class BlogTypeServiceImpl implements BlogTypeService {
         param.put("blogTypeId", id.toString());
         List<BlogVO> blogVOList = blogDAO.listBlog(param);
         if (blogVOList.size() > 0) {
-            return 0;
+            for (BlogVO blogVO : blogVOList) {
+                blogDAO.deleteBlog(blogVO.getId());
+            }
         }
         return blogTypeDAO.deleteBlogType(id);
     }

@@ -39,11 +39,12 @@ public class BlogTagServiceImpl implements BlogTagService {
         param.put("blogTagId", id);
         List<BlogVO> blogVOList = blogDAO.listBlog(param);
         if (blogVOList.size() > 0) {
-            return 0;
+            for (BlogVO blogVO : blogVOList) {
+                blogDAO.deleteBlog(blogVO.getId());
+            }
         }
         return blogTagDAO.deleteBlogTag(id);
     }
-
     @Override
     public int addBlogTag(BlogTagPO blogTagPO) {
         return blogTagDAO.addBlogTag(blogTagPO);

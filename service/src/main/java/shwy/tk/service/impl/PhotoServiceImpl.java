@@ -50,10 +50,12 @@ public class PhotoServiceImpl implements PhotoService{
     @Override
     public int deletePhoto(Integer id) {
         HashMap<String, Object> param = new HashMap<>();
-        param.put("photoId", id.toString());
+        param.put("photoId", id);
         List<ImagesPO> imagesList = imagesDAO.listImagesPO(param);
         if (imagesList.size() > 0) {
-            return 0;
+            for (ImagesPO imagesPO : imagesList) {
+                imagesDAO.deleteImage(imagesPO.getId());
+            }
         }
         return photoDAO.deletePhoto(id);
     }

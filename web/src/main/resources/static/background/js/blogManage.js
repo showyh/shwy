@@ -78,7 +78,7 @@
     //输出接口，主要是两个函数，一个删除一个编辑
     var datalist = {
         deleteData: function (id) {
-            layer.confirm('同时会删除对应评论，确定删除？', {
+            layer.confirm('同时会删除对应评论以及评论的回复，确定删除？', {
                 btn: ['确定', '取消'] //按钮
             }, function () {
                 $.ajax({

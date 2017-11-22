@@ -147,7 +147,7 @@
         //输出接口，主要是两个函数，一个删除一个编辑
         var datalist = {
             deleteData: function (id) {
-                layer.confirm('您确定要删除吗？', {
+                layer.confirm('同时删除该标签的所有博文，您确定要删除吗？', {
                     btn: ['确定', '取消'] //按钮
                 }, function () {
                     $.ajax({
@@ -164,7 +164,7 @@
                                     window.location.href = "/admin/blogTagManage"
                                 });
                             } else {
-                                layer.alert('删除失败,该标签下存在博文!', {icon: 5});
+                                layer.alert('删除失败!', {icon: 5});
                             }
                         }
                     });

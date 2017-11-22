@@ -77,7 +77,7 @@
     //输出接口，主要是两个函数，一个删除一个编辑
     var datalist = {
         deleteData: function (id) {
-            layer.confirm('同时会删除相册下的照片，确定删除？', {
+            layer.confirm('同时会删除该相册下的所有照片，确定删除？', {
                 btn: ['确定', '取消'] //按钮
             }, function () {
                 $.ajax({
