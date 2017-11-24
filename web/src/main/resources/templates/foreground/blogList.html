@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <h6><a th:href="'/blog/'+${blog.id}" href="blog.html" th:text="${blog.title}">最新博文</a></h6>
-                        <h6>BY <a th:text="${blog.author}">showy</a>
+                        <h6>By <a th:text="${blog.author}">showy</a>
                             <span th:text="${#calendars.format(blog.publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                         <p th:text="${blog.summary}" class="summary">博客概述</p>
                         <div class="bht1">

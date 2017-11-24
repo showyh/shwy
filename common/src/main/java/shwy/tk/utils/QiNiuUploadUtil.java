@@ -19,21 +19,6 @@ public class QiNiuUploadUtil {
     private static String BUCKET_NAME = "showy"; //要上传的空间
     private static String ACCESS_KEY = "yjjl3q6Qb8vihdJSvPAfX3HE6v-efI-KuSFoCdz1"; //这两个登录七牛 账号里面可以找到
     private static String SECRET_KEY = "f0WE2UVfzT8Hl6sMYlVM0rujnGDbSg8iRo-eQkc3";
-    //由于Spring无法直接注入静态参数，故用set方法
-   /* @Value("${SECRET_KEY}")
-    private void setSECRET_KEY(String SECRET_KEY) {
-        this.SECRET_KEY = SECRET_KEY;
-    }
-
-    @Value("${ACCESS_KEY}")
-    private void setACCESS_KEY(String ACCESS_KEY) {
-        this.ACCESS_KEY = ACCESS_KEY;
-    }
-
-    @Value("${BUCKET_NAME}")
-    private void setBUCKET_NAME(String BUCKET_NAME){
-        this.BUCKET_NAME=BUCKET_NAME;
-    }*/
 
     //普通上传
     public static boolean upload(InputStream in, String key) {

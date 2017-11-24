@@ -44,7 +44,8 @@
                                             <img th:src="${photo.coverImage}"  src="/foreground/images/coverImage/photo/20171015132848.jpg" alt="相册封面" />
                                         </a>
                                         <figcaption>
-                                            <h2 th:text="${photo.photoName}+' by '+${photo.author}">相册名称</h2>
+                                            <h2 th:text="${photo.photoName}">相册名称</h2>
+                                            <p th:text="${photo.author}"></p>
                                             <p th:text="${photo.description}">相册描述</p>
                                             <a th:href="'/images/'+${photo.id}" href="images.html">进入相册</a> </figcaption>
                                     </figure>
