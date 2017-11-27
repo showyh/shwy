@@ -17,17 +17,18 @@ import java.util.List;
 
 /**
  * 项目启动时就加载此类，将不常变的数据存进application，相当于缓存
+ * @author shwy
  */
 @Component
 public class InitCache implements ServletContextListener, ApplicationContextAware {
 
     private static ApplicationContext applicationContext;
 
-
+    /*抑制相对于不正确静态访问的警告*/
     @SuppressWarnings("static-access")
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
+        InitCache.applicationContext = applicationContext;
     }
 
     @Override
@@ -52,13 +53,20 @@ public class InitCache implements ServletContextListener, ApplicationContextAwar
         BlogVO recommendBlog = blogService.getRecommendBlog();
 
         //将数据塞进application
-        application.setAttribute("linkList", linkList);//友情链接;
-        application.setAttribute("blogTypeList", blogTypeList);//博客类别;
-        application.setAttribute("blogTagList", blogTagList);//博客列表;
-        application.setAttribute("blogDateArchiveList", blogDateArchiveList);//博客日期归档;
-        application.setAttribute("motto", motto);//博客座右铭;
-        application.setAttribute("signature", signature);//博客签名;
-        application.setAttribute("recommendBlog", recommendBlog);//推荐博客;
+        //友情链接
+        application.setAttribute("linkList", linkList);
+        //博客类别
+        application.setAttribute("blogTypeList", blogTypeList);
+        //博客列表
+        application.setAttribute("blogTagList", blogTagList);
+        //博客日期归档
+        application.setAttribute("blogDateArchiveList", blogDateArchiveList);
+        //博客座右铭
+        application.setAttribute("motto", motto);
+        //博客签名
+        application.setAttribute("signature", signature);
+        //推荐博客
+        application.setAttribute("recommendBlog", recommendBlog);
 
 
     }
