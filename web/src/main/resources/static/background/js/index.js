@@ -37,7 +37,7 @@
             type: "GET",
             data: {
                 userName: data.field.account,
-                password: data.field.password,
+                userPass: data.field.password,
                 ip: ip,
                 ipName: ipName,
                 loginTime: loginTime,

@@ -24,7 +24,7 @@ public class LikeServiceImpl implements LikeService {
     @Override
     public int addLike(String userIP) {
         return likeDAO.addLike(userIP);
-    }
+}
 
     @Override
     public Long getTodayLike() {

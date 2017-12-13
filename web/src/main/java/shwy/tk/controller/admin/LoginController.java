@@ -33,7 +33,7 @@ public class LoginController {
     @ResponseBody
     public String checkLogin(AdminPO adminPO, LoginHistoryPO loginHistoryPO, HttpSession session) {
         Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(adminPO.getUserName(), adminPO.getPassword());
+        UsernamePasswordToken token = new UsernamePasswordToken(adminPO.getUserName(), adminPO.getUserPass());
         try {
             subject.login(token);//登录验证
             session.setAttribute("currentAdmin", adminPO);
