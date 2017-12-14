@@ -57,8 +57,12 @@
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-ehcache</artifactId>
         </dependency>
-
-
+        <!-- 热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
@@ -70,6 +74,8 @@
                 <configuration><!-- 指定该Main Class为全局的唯一入口 -->
                     <mainClass>shwy.tk.ShwyApplication</mainClass>
                     <layout>ZIP</layout>
+                    <fork>true</fork><!--spring-boot-devtools 为true才能生效-->
+                    <addResources>true</addResources><!--支持静态文件热部署-->
                 </configuration>
             </plugin>
 
