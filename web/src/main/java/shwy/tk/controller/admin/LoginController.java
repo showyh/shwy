@@ -16,7 +16,8 @@ import shwy.tk.utils.ConfigStrUtil;
 import javax.servlet.http.HttpSession;
 
 /**
- * Created by shwy on 2017/10/20.
+ * @author showy on 2017/12/15.
+ * @version 1.0
  */
 @Controller
 public class LoginController {
@@ -24,32 +25,32 @@ public class LoginController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping(value = "/background", method = RequestMethod.GET)
-    public String goBackground() {
+
+
+    @RequestMapping(value="/background",method = RequestMethod.GET)
+    public String goBackground(){
         return "background/index";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value ="/login",method = RequestMethod.GET)
     @ResponseBody
-    public String checkLogin(AdminPO adminPO, LoginHistoryPO loginHistoryPO, HttpSession session) {
-        Subject subject = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(adminPO.getUserName(), adminPO.getUserPass());
-        try {
+    public String checkLogin(AdminPO adminPO, LoginHistoryPO loginHistoryPO, HttpSession session){
+        Subject subject= SecurityUtils.getSubject();
+        UsernamePasswordToken token=new UsernamePasswordToken(adminPO.getUserName(), adminPO.getPassword());
+        try{
             subject.login(token);//登录验证
-            session.setAttribute("currentAdmin", adminPO);
-            int result = adminService.addLoginHistory(loginHistoryPO);
-            if (result > 0) {
-                session.setAttribute("currentAdmin", adminPO);
+            session.setAttribute("currentAdmin",adminPO);
+            int result=adminService.addLoginHistory(loginHistoryPO);
+            if(result>0){
+                session.setAttribute("currentAdmin",adminPO);
                 return ConfigStrUtil.SUCCESS;
-            } else {
+            }else{
                 return ConfigStrUtil.ERROR;
             }
-        } catch (Exception e) {
+        }catch(Exception e){
             e.printStackTrace();
             return ConfigStrUtil.ERROR;
         }
 
     }
-
-
 }

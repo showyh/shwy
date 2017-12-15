@@ -31,15 +31,15 @@ public class ShiroRealm extends AuthorizingRealm {
     //身份设置
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        String userName = (String) authenticationToken.getPrincipal();
-        AdminPO adminPO = adminService.getAdminPOByUserName(userName);
-        if (adminPO != null) {
+        String userName=(String)authenticationToken.getPrincipal();
+        AdminPO adminPO=adminService.getAdminPOByUserName(userName);
+        if(adminPO!=null){
             SecurityUtils.getSubject().getSession().setAttribute("currentAdmin", adminPO);
             //设置session超时时间1h。
             SecurityUtils.getSubject().getSession().setTimeout(3600000);
-            AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(adminPO.getUserName(), adminPO.getUserPass(), "xx");
+            AuthenticationInfo authcInfo=new SimpleAuthenticationInfo(adminPO.getUserName(),adminPO.getPassword(),"xx");
             return authcInfo;
-        } else {
+        }else{
             return null;
         }
     }

@@ -4,17 +4,17 @@ package shwy.tk.pojo.po;
  * Created by shwy on 2017/10/20.
  */
 public class AdminPO {
-    private Integer userId;
+    private Integer id;
     private String userName;
-    private String userPass;
-    private String userRole;
+    private String password;
+    private String role;
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -25,19 +25,19 @@ public class AdminPO {
         this.userName = userName;
     }
 
-    public String getUserPass() {
-        return userPass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserPass(String userPass) {
-        this.userPass = userPass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getUserRole() {
-        return userRole;
+    public String getRole() {
+        return role;
     }
 
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
+    public void setRole(String role) {
+        this.role = role;
     }
 }
