@@ -1,7 +1,8 @@
 package shwy.tk.utils;
 
 /**
- * Created by shwy on 2017/10/20.
+ * @author showy on 2017/10/20.
+ * @version 1.0
  */
 public class StringUtil {
     public static Boolean isEmpty(String str) {

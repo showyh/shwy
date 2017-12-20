@@ -1,7 +1,8 @@
 package shwy.tk.pojo.po;
 
 /**
- * Created by shwy on 2017/10/20.
+ * @author showy on 2017/10/17.
+ * @version 1.0
  */
 public class AdminPO {
     private Integer id;

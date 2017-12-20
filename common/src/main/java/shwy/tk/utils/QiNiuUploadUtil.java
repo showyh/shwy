@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by shwy on 2017/10/20.
+ * @author showy on 2017/10/20.
+ * @version 1.0
+ * 七牛云工具类
  */
 @Component
 public class QiNiuUploadUtil {
@@ -63,6 +65,5 @@ public class QiNiuUploadUtil {
         }
         return res.isOK();
     }
-
 
 }

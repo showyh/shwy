@@ -15,7 +15,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 /**
- * Created by shwy on 2017/10/20.
+ * @author showy on 2017/10/15.
+ * @version 1.0
  */
 @Configuration
 public class MyBatisConfig {

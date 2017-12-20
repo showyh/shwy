@@ -10,7 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by shwy on 2017/10/23.
+ * @author showy on 2017/10/15.
+ * @version 1.0
  */
 public interface BlogDAO {
 

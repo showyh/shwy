@@ -8,7 +8,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by shwy on 2017/10/20.
+ * @author showy on 2017/10/20.
+ * @version 1.0
  */
 public class PostServerUtil {
 
@@ -62,6 +63,5 @@ public class PostServerUtil {
         }
         return result;
     }
-
 
 }

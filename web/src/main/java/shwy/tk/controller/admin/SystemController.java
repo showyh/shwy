@@ -64,6 +64,7 @@ public class SystemController {
     public String refreshSystem(HttpServletRequest request) {
         ServletContext application = request.getServletContext();
 
+
         //调用service方法，取得数据
         List<LinkPO> linkList = linkService.listLink(new HashMap<>());
         List<BlogTypePO> blogTypeList = blogTypeService.listBlogType();

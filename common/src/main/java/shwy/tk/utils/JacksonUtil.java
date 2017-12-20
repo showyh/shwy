@@ -3,9 +3,10 @@ package shwy.tk.utils;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
 /**
- * Created by shwy on 2017/10/20.
+ * @author showy on 2017/10/20.
+ * @version 1.0
+ * Jackson工具类
  */
 public class JacksonUtil {
 

@@ -38,7 +38,7 @@ public class BlogAdviceController {
    @RequestMapping(value="/blogAdvice",method = RequestMethod.GET)
     public ModelAndView blogAdvice(){
         ModelAndView mav=new ModelAndView("foreground/blogAdvice");
-        PageBeanBO pageBeanBO=new PageBeanBO(1, ConfigStrUtil.BLOGADVICEPAGESIZE);
+        PageBeanBO pageBeanBO=new PageBeanBO(1, ConfigStrUtil.BlogAdvicePageSize);
         List<BlogAdvicePO> blogAdviceList = blogAdviceService.listBlogAdvice(pageBeanBO);
         //获取分页代码
         Long count=blogAdviceService.getBlogAdviceCount();
@@ -55,7 +55,7 @@ public class BlogAdviceController {
         if(StringUtil.isEmpty(page)){
             page="1";
         }
-        PageBeanBO pageBeanBO=new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGADVICEPAGESIZE);
+        PageBeanBO pageBeanBO=new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BlogAdvicePageSize);
         List<BlogAdvicePO> blogAdviceList = blogAdviceService.listBlogAdvice(pageBeanBO);
         //获取分页代码
         Long count=blogAdviceService.getBlogAdviceCount();

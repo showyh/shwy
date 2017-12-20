@@ -9,7 +9,8 @@ import shwy.tk.pojo.po.LoginHistoryPO;
 import shwy.tk.service.AdminService;
 
 /**
- * Created by shwy on 2017/10/23.
+ * @author showy on 2017/10/17.
+ * @version 1.0
  */
 @Service("adminService")
 public class AdminServiceImpl implements AdminService {

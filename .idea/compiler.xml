@@ -20,6 +20,7 @@
       <module name="plugin" target="1.8" />
       <module name="pojo" target="1.8" />
       <module name="service" target="1.8" />
+      <module name="showy" target="1.8" />
       <module name="shwy" target="1.8" />
       <module name="web" target="1.8" />
     </bytecodeTargetLevel>

@@ -51,7 +51,7 @@ public class BlogListController {
         ModelAndView mav = new ModelAndView("foreground/blogList");
         HashMap<String, Object> param = new HashMap<>();
         //拼装分页参数
-        PageBeanBO pageBean = new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
+        PageBeanBO pageBean = new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BlogListPageSize);
         param.put("start", pageBean.getStart());
         param.put("pageSize", pageBean.getPageSize());
         //拼装筛选参数
@@ -74,7 +74,7 @@ public class BlogListController {
         ModelAndView mav = new ModelAndView("foreground/blogList");
         HashMap<String, Object> param = new HashMap<>();
         //拼装分页参数
-        PageBeanBO pageBean = new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
+        PageBeanBO pageBean = new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BlogListPageSize);
         param.put("start", pageBean.getStart());
         param.put("pageSize", pageBean.getPageSize());
         //拼装筛选参数
@@ -97,7 +97,7 @@ public class BlogListController {
         ModelAndView mav = new ModelAndView("foreground/blogList");
         HashMap<String, Object> param = new HashMap<>();
         //拼装分页参数
-        PageBeanBO pageBean = new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
+        PageBeanBO pageBean = new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BlogListPageSize);
         param.put("start", pageBean.getStart());
         param.put("pageSize", pageBean.getPageSize());
         //拼装筛选参数
@@ -121,7 +121,7 @@ public class BlogListController {
         ModelAndView mav = new ModelAndView("foreground/blogList");
         HashMap<String, Object> param = new HashMap<>();
         //拼装分页参数
-        PageBeanBO pageBean = new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
+        PageBeanBO pageBean = new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BlogListPageSize);
         param.put("start", pageBean.getStart());
         param.put("pageSize", pageBean.getPageSize());
         //拼装筛选参数

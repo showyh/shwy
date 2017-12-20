@@ -4,7 +4,8 @@ import org.apache.ibatis.annotations.Param;
 import shwy.tk.pojo.po.AdminPO;
 
 /**
- * Created by shwy on 2017/10/17.
+ * @author showy on 2017/10/17.
+ * @version 1.0
  */
 public interface AdminDAO {
 

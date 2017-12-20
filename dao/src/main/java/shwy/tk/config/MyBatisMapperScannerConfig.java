@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by shwy on 2017/10/20.
+ * @author showy on 2017/10/15.
+ * @version 1.0
  */
 @Configuration
 @MapperScan("shwy.tk.dao")
