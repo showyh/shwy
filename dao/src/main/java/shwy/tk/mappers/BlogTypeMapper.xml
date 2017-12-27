@@ -17,11 +17,11 @@
     <select id="listBlogTypePO" resultMap="blogTypeResultMap">
         select
         <include refid="list"/>
-        from blogType
+        from blogtype
     </select>
 
     <select id="getBlogType" resultMap="blogTypeResultMap">
-        select * FROM blogType where id=#{blogTypeId}
+        select * FROM blogtype where id=#{blogTypeId}
     </select>
 
     <update id="updateBlogType" parameterType="shwy.tk.pojo.po.BlogTypePO">

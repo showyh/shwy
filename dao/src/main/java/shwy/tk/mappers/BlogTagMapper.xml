@@ -17,14 +17,14 @@
     <select id="listBlogTagPO" resultMap="blogTagResultMap" parameterType="Map">
         select
         <include refid="list"/>
-        from blogTag
+        from blogtag
         <if test="start!=null and pageSize!=null">
             limit #{start},#{pageSize}
         </if>
     </select>
 
     <select id="getBlogTag" resultMap="blogTagResultMap">
-        select * from blogTag where id=#{blogTagId}
+        select * from blogtag where id=#{blogtagId}
     </select>
 
     <update id="updateBlogTag" parameterType="shwy.tk.pojo.po.BlogTagPO">

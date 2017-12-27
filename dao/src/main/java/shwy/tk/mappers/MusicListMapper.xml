@@ -21,37 +21,37 @@
     <select id="musicListPO" resultMap="musicListResultMap" parameterType="Map">
         select
         <include refid="listPO"/>
-        from musicList
+        from musiclist
     </select>
     <select id="getMusicList" resultMap="musicListResultMap">
-        select * from musicList where id=#{id}
+        select * from musiclist where id=#{id}
     </select>
 
     <insert id="addMusicList" parameterType="shwy.tk.pojo.po.MusicListPO">
-        insert into musicList
+        insert into musiclist
         values(null,#{musicListName},#{basic},#{img},#{singer})
     </insert>
 
     <update id="updateMusicList" parameterType="shwy.tk.pojo.po.MusicListPO">
-        update musicList set
+        update musiclist set
        musicListName=#{musicListName},basic=#{basic},img=#{img},singer=#{singer}
         where id=#{id}
     </update>
 
     <delete id="deleteMusicList" parameterType="Integer">
-        delete from musicList where id = #{id}
+        delete from musiclist where id = #{id}
     </delete>
 
     <select id="getMusicListCount" resultType="Long" parameterType="Map">
-        select count(*) from musicList
+        select count(*) from musiclist
     </select>
 
     <select id="listAllMusicList" resultType="shwy.tk.pojo.po.MusicListPO" parameterType="Map">
-        select * from musicList
+        select * from musiclist
     </select>
 
     <select id="listMusicList" resultType="shwy.tk.pojo.po.MusicListPO" parameterType="Map">
-        select * from musicList order by id DESC
+        select * from musiclist order by id DESC
         <if test="start!=null and pageSize!=null">
             limit #{start},#{pageSize}
         </if>

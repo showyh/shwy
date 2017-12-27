@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>web</artifactId>
-    <!--<packaging>war</packaging>-->
+   <!-- <packaging>war</packaging>-->
     <dependencies>
         <!--web层依赖于service层-->
         <dependency>
@@ -64,15 +64,15 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--第三方tomcat-->
-      <!--  <dependency>
+        <!--第三方tomcatAPI-->
+        <!--<dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-servlet-api</artifactId>
         </dependency>-->
     </dependencies>
 
     <build>
-        <finalName>showy</finalName>
+        <finalName>shwy</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
